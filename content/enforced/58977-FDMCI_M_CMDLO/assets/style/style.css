@@ -1,3 +1,7 @@
 body {
- background: goldenrod;
+  font-family: Lato, 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+
+  background-color: #f5f5f5;
+  max-width: 76.875em; /* 1230px */
+  margin: 0 auto;
 }
