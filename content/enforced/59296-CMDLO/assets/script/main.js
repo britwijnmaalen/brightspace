@@ -12,7 +12,7 @@
 
 
 async function getFeedAsync(url) {
-  return await fetch(url, {method: 'GET'})
+  return await fetch('https://cors-anywhere.herokuapp.com/'+url, {method: 'GET'})
 }
 
 async function parseFeedAsync(data) {
