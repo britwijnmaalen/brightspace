@@ -15,7 +15,7 @@
       cmdlo: 'https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296',
       fdmci: 'http://www.hva.nl/faculteit/fdmci/nieuws/nieuwsoverzicht.rss',
       proxy: 'https://cors-anywhere.herokuapp.com/',
-      local: '/assets/script/rss.xml'
+      local: './assets/script/rss.xml'
     };
     const newsContainer = document.getElementById('news');
 
