@@ -38,7 +38,8 @@
         <article>
           <header>
             <h1>${item.title}</h1>
-            <time>${new Date(item.pubDate).toDateString()}</time>
+            <time>${convertDate(item.pubDate)}</time>
+
             <a href="#" rel="author">${item.author}</a>
 
           </header>
@@ -52,5 +53,9 @@
 
         newsContainer.insertAdjacentHTML('afterend', newsItems);
       });
+  }
+
+  function convertDate(date) {
+    return new Intl.DateTimeFormat().format(new Date(date));
   }
 })();
