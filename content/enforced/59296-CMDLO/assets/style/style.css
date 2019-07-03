@@ -18,16 +18,13 @@ a:focus,
 a.active {
   background-color: #eee;
 }
-time {
-}
+
 time:after {
   content: '|';
   padding: 0 0.25em;
 }
 /**** HEADER ****/
 body > header {
-  grid-column: 2 / 5;
-  grid-row: 1 / 2;
   order: 1;
   display: flex;
   flex-direction: column;
@@ -50,6 +47,13 @@ body > header:after {
 header h1 {
   margin: 0;
 }
+header h1 em {
+  font-style: normal;
+  background-color: #000;
+  color: #fff;
+  margin-right: 0.1em;
+  padding: 0 0.3em;
+}
 header p {
   margin: 0;
   font-size: 1.25em;
@@ -58,14 +62,13 @@ header p {
 
 /**** MENU NAVIGATION ****/
 nav {
-  padding: 0 1rem 0;
+  padding: 0;
   order: 3;
   background-color: #fff;
   margin: 1rem -1rem;
 }
 nav h1 {
-  margin-bottom: 3px;
-  margin: 0 0 0.75em;
+  margin: 0;
   font-weight: 700;
   line-height: 1.25em;
 }
@@ -121,8 +124,6 @@ main article header h1 ~ * {
 
 /**** FOOTER ****/
 footer {
-  grid-column: 2 / 5;
-  grid-row: 3 / 4;
   order: 4;
 }
 
@@ -145,7 +146,7 @@ footer {
   nav {
     background-color: transparent;
     grid-column: 1 / 2;
-    grid-row: 1 / 4;
+    grid-row: 2 / 4;
     margin: 1.8rem 0;
     padding-top: 0;
   }
