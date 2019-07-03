@@ -11,7 +11,6 @@ if (document.body.contains(document.getElementById('news'))) {
 }
 
 function getNews() {
-  console.log(1);
   const feeds = {
     cmdlo: 'https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296',
     fdmci: 'http://www.hva.nl/faculteit/fdmci/nieuws/nieuwsoverzicht.rss',
@@ -19,9 +18,11 @@ function getNews() {
     local: '/assets/script/rss.xml'
   };
   const newsContainer = document.getElementById('news');
-  console.log(newsContainer);
 
-  fetch(feeds.local)
+  let url =
+    window.location.hostname === 'localhost' ? feeds.local : feeds.cmdlo;
+
+  fetch(url)
     .then(response => response.text())
     .then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
     .then(xml => {
