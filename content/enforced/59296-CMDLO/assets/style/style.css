@@ -44,7 +44,7 @@ body > header:after {
   transform: rotate(10deg);
 }
 
-header h1 {
+body > header h1 {
   margin: 0;
 }
 header h1 em {
@@ -111,6 +111,14 @@ main {
   order: 2;
 }
 
+main h2 {
+  font-size: 1em;
+  margin: 0;
+}
+main p {
+  margin-top: 0;
+}
+
 main article {
   margin-bottom: 1rem;
   border-bottom: 1px solid #f0f0f0;
@@ -133,12 +141,15 @@ footer {
     max-width: 73em;
     margin: 1rem auto;
     display: grid;
-    grid-template-columns: 1fr 6fr;
+    grid-template-columns: 12em 6fr;
     grid-template-rows: 3em auto 5em;
+    overflow-x: hidden;
+  }
+  body > button {
   }
 
   header {
-    grid-column: 2 / 5;
+    grid-column: 1 / 5;
     grid-row: 1 / 2;
   }
 
@@ -149,6 +160,11 @@ footer {
     grid-row: 2 / 4;
     margin: 1.8rem 0;
     padding-top: 0;
+    transition: 0.25s;
+  }
+  body.hide-menu nav {
+    opacity: 0;
+    transform: translateX(-300%);
   }
   nav ul,
   nav ul li {
@@ -159,6 +175,10 @@ footer {
     grid-column: 2 / 5;
     grid-row: 2 / 3;
     max-width: 40em;
+    transition: 0.25s;
+  }
+  body.hide-menu main {
+    transform: translateX(-12em);
   }
 
   /**** FOOTER ****/

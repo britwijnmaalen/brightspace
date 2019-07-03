@@ -6,6 +6,8 @@
 *   -
 */
 (() => {
+  toggleNav();
+
   if (document.body.contains(document.getElementById('news'))) {
     getNews();
   }
@@ -57,5 +59,16 @@
 
   function convertDate(date) {
     return new Intl.DateTimeFormat().format(new Date(date));
+  }
+
+  function toggleNav() {
+    const body = document.body;
+    const toggleBtn = document.createElement('button');
+    toggleBtn.innerHTML = 'toggle menu';
+
+    toggleBtn.addEventListener('click', e =>
+      body.classList.toggle('hide-menu')
+    );
+    document.body.appendChild(toggleBtn);
   }
 })();
