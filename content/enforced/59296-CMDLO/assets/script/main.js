@@ -5,35 +5,35 @@
 *   - https://dev.to/niinpatel/converting-xml-to-json-using-recursion-2k4j
 *   -
 */
-(() => {
-  if (document.body.contains(document.getElementById('news'))) {
-    getNews();
-  }
 
-  function getNews() {
-    const feeds = {
-      cmdlo: 'https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296',
-      fdmci: 'http://www.hva.nl/faculteit/fdmci/nieuws/nieuwsoverzicht.rss',
-      proxy: 'https://cors-anywhere.herokuapp.com/',
-      local: '/assets/script/rss.xml'
-    };
-    const newsContainer = document.getElementById('news');
+if (document.body.contains(document.getElementById('news'))) {
+  getNews();
+}
 
-    let url =
-      window.location.hostname === ('localhost' || 'cmda.github.io')
-        ? feeds.local
-        : feeds.cmdlo;
+function getNews() {
+  const feeds = {
+    cmdlo: 'https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296',
+    fdmci: 'http://www.hva.nl/faculteit/fdmci/nieuws/nieuwsoverzicht.rss',
+    proxy: 'https://cors-anywhere.herokuapp.com/',
+    local: '/assets/script/rss.xml'
+  };
+  const newsContainer = document.getElementById('news');
 
-    fetch(url)
-      .then(response => response.text())
-      .then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
-      .then(xml => {
-        const data = xml2json(xml);
-        const items = data.rss.channel.item;
+  let url =
+    window.location.hostname === ('localhost' || 'cmda.github.io')
+      ? feeds.local
+      : feeds.cmdlo;
 
-        const newsItems = items
-          .map(
-            item => `
+  fetch(url)
+    .then(response => response.text())
+    .then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
+    .then(xml => {
+      const data = xml2json(xml);
+      const items = data.rss.channel.item;
+
+      const newsItems = items
+        .map(
+          item => `
         <article>
           <header>
             <h1>${item.title}</h1>
@@ -45,10 +45,9 @@
 
         </article>
       `
-          )
-          .join('');
+        )
+        .join('');
 
-        newsContainer.insertAdjacentHTML('afterend', newsItems);
-      });
-  }
-})();
+      newsContainer.insertAdjacentHTML('afterend', newsItems);
+    });
+}
