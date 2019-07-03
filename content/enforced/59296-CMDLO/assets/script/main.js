@@ -5,38 +5,36 @@
 *   - https://dev.to/niinpatel/converting-xml-to-json-using-recursion-2k4j
 *   -
 */
+(() => {
+  if (document.body.contains(document.getElementById('news'))) {
+    getNews();
+  }
 
-if (document.body.contains(document.getElementById('news'))) {
-  getNews();
-}
+  function getNews() {
+    const feeds = {
+      cmdlo: 'https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296',
+      fdmci: 'http://www.hva.nl/faculteit/fdmci/nieuws/nieuwsoverzicht.rss',
+      proxy: 'https://cors-anywhere.herokuapp.com/',
+      local: '/assets/script/rss.xml'
+    };
+    const newsContainer = document.getElementById('news');
 
-function getNews() {
-  const feeds = {
-    cmdlo: 'https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296',
-    fdmci: 'http://www.hva.nl/faculteit/fdmci/nieuws/nieuwsoverzicht.rss',
-    proxy: 'https://cors-anywhere.herokuapp.com/',
-    local: '/assets/script/rss.xml'
-  };
-  const newsContainer = document.getElementById('news');
+    let url =
+      window.location.hostname === 'cmda.github.io' ||
+      window.location.hostname === 'localhost'
+        ? feeds.local
+        : feeds.cmdlo;
 
-  let url =
-    window.location.hostname === ('localhost' || 'cmda.github.io')
-      ? feeds.local
-      : feeds.cmdlo;
+    fetch(url)
+      .then(response => response.text())
+      .then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
+      .then(xml => {
+        const data = xml2json(xml);
+        const items = data.rss.channel.item;
 
-  console.log('hostname', window.location.hostname);
-  console.log('url', url);
-
-  fetch(url)
-    .then(response => response.text())
-    .then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
-    .then(xml => {
-      const data = xml2json(xml);
-      const items = data.rss.channel.item;
-
-      const newsItems = items
-        .map(
-          item => `
+        const newsItems = items
+          .map(
+            item => `
         <article>
           <header>
             <h1>${item.title}</h1>
@@ -48,9 +46,10 @@ function getNews() {
 
         </article>
       `
-        )
-        .join('');
+          )
+          .join('');
 
-      newsContainer.insertAdjacentHTML('afterend', newsItems);
-    });
-}
+        newsContainer.insertAdjacentHTML('afterend', newsItems);
+      });
+  }
+})();
