@@ -24,6 +24,9 @@ function getNews() {
       ? feeds.local
       : feeds.cmdlo;
 
+  console.log('hostname', window.location.hostname);
+  console.log('url', url);
+
   fetch(url)
     .then(response => response.text())
     .then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
