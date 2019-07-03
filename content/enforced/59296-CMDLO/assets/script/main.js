@@ -1,25 +1,48 @@
-
 /*
 *
 * Loosely based on:
 *   - https://dev.to/shoupn/javascript-fetch-api-and-using-asyncawait-47mp
 *   - https://dev.to/niinpatel/converting-xml-to-json-using-recursion-2k4j
-*   - 
+*   -
 */
 
-const feeds = {
-    cmdlo: "https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296",
-    fdmci: "http://www.hva.nl/faculteit/fdmci/nieuws/nieuwsoverzicht.rss"
-}
+getNews();
 
-// async function getFeedAsync(url) {
-//   return await fetch('https://cors-anywhere.herokuapp.com/'+url, {method: 'GET'})
-// }
+function getNews() {
+  console.log(1);
+  const feeds = {
+    cmdlo: 'https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296',
+    fdmci: 'http://www.hva.nl/faculteit/fdmci/nieuws/nieuwsoverzicht.rss',
+    proxy: 'https://cors-anywhere.herokuapp.com/',
+    local: '/assets/script/rss.xml'
+  };
+  const newsContainer = document.getElementById('news');
+  console.log(newsContainer);
 
-// async function parseFeedAsync(data) {
-//     console.log(data)
-// }
-
-fetch(feeds.cmdlo)
+  fetch(feeds.local)
     .then(response => response.text())
-    .then(str => console.log(str))
+    .then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
+    .then(xml => {
+      const data = xml2json(xml);
+      const items = data.rss.channel.item;
+
+      const newsItems = items
+        .map(
+          item => `
+        <article>
+          <header>
+            <h1>${item.title}</h1>
+            <a href="#" rel="author">${item.author}</a>
+            <time>${item.pubDate.toString()}</time>
+          </header>
+
+          <p>${item.description}</p>
+
+        </article>
+      `
+        )
+        .join('');
+
+      newsContainer.insertAdjacentHTML('afterend', newsItems);
+    });
+}

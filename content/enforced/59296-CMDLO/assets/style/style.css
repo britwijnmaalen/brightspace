@@ -14,6 +14,9 @@ a:focus,
 a.active {
   background-color: #eee;
 }
+time {
+  display: block;
+}
 
 header {
   grid-column: 2 / 5;
