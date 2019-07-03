@@ -20,7 +20,9 @@
     const newsContainer = document.getElementById('news');
 
     let url =
-      window.location.hostname === 'localhost' ? feeds.local : feeds.cmdlo;
+      window.location.hostname === ('localhost' || 'cmda.github.io')
+        ? feeds.local
+        : feeds.cmdlo;
 
     fetch(url)
       .then(response => response.text())
