@@ -6,7 +6,9 @@
 *   -
 */
 
-getNews();
+if (document.body.contains(document.getElementById('news'))) {
+  getNews();
+}
 
 function getNews() {
   console.log(1);

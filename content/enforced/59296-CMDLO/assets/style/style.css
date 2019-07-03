@@ -1,4 +1,6 @@
-/**** SINGLE COLUMN ****/
+/******** SINGLE COLUMN ********/
+
+/**** GENERIC ****/
 body {
   font-family: Lato, 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
   color: #333;
@@ -7,6 +9,7 @@ body {
   flex-direction: column;
   margin: 1rem;
 }
+
 a {
 }
 a:hover,
@@ -17,7 +20,7 @@ a.active {
 time {
   display: block;
 }
-
+/**** HEADER ****/
 header {
   grid-column: 2 / 5;
   grid-row: 1 / 2;
@@ -78,6 +81,7 @@ nav ul li a {
 }
 /**** MAIN ****/
 main {
+  padding: 1rem 0;
   grid-column: 2 / 5;
   grid-row: 2 / 3;
   order: 2;
@@ -90,7 +94,7 @@ footer {
   order: 4;
 }
 
-/**** >=TABLET ****/
+/******** >=TABLET ********/
 @media (min-width: 45em) {
   body {
     max-width: 73em;
