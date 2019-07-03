@@ -38,8 +38,9 @@
         <article>
           <header>
             <h1>${item.title}</h1>
+            <time>${new Date(item.pubDate).toDateString()}</time>
             <a href="#" rel="author">${item.author}</a>
-            <time>${item.pubDate.toString()}</time>
+
           </header>
 
           <p>${item.description}</p>
