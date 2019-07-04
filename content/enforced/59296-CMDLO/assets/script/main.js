@@ -63,12 +63,13 @@
 
   function toggleNav() {
     const body = document.body;
+    const nav = document.querySelector('nav');
     const toggleBtn = document.createElement('button');
     toggleBtn.innerHTML = 'toggle menu';
 
     toggleBtn.addEventListener('click', e =>
       body.classList.toggle('hide-menu')
     );
-    document.body.appendChild(toggleBtn);
+    nav.appendChild(toggleBtn);
   }
 })();
