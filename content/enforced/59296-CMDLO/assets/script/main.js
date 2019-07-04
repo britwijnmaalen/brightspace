@@ -8,8 +8,8 @@
 */
 
 const feeds = {
-    cmdlo: "https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296",
-    fdmci: "http://www.hva.nl/faculteit/fdmci/nieuws/nieuwsoverzicht.rss"
+  cmdlo: "https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296",
+  fdmci: "https://www.hva.nl/faculteit/fdmci/nieuws/nieuwsoverzicht.rss"
 }
 
 // async function getFeedAsync(url) {
@@ -21,5 +21,11 @@ const feeds = {
 // }
 
 fetch(feeds.cmdlo)
-    .then(response => response.text())
-    .then(str => console.log(str))
+  .then(response => response.text())
+  .then(xmlstr => (new window.DOMParser()).parseFromString(xmlstr, "text/xml"))
+  .then(data => console.log(data))
+
+fetch(feeds.fdmci)
+  .then(response => response.text())
+  .then(xmlstr => (new window.DOMParser()).parseFromString(xmlstr, "text/xml"))
+  .then(data => console.log(data))
