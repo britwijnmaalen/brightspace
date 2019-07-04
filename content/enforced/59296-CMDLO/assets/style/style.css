@@ -155,6 +155,13 @@ footer {
     grid-row: 1 / 2;
     padding: 0 1rem;
   }
+  body > header a,
+  body > header a * {
+    text-decoration: none;
+  }
+  body > header a:hover {
+    background-color: transparent;
+  }
 
   /**** MENU NAVIGATION ****/
   nav {
