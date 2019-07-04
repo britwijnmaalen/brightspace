@@ -57,15 +57,47 @@
       });
   }
 
+  /**
+   * This function converts a dat into Intl.DateTimeFormat
+   * @param date: date to convert
+   */
   function convertDate(date) {
-    return new Intl.DateTimeFormat().format(new Date(date));
+    return new Intl.DateTimeFormat().format(new Date(date))
   }
 
+  /**
+   * This function creates a button to toggle the navigation using a CSS
+   * class juggling event listener toggling the 'hide-menu' class.
+   */
   function toggleNav() {
-    let toggleBtn = document.createElement('button')
-    toggleBtn.innerHTML = 'toggle menu'
-
+    let toggleBtn = createButton()
+    setInnerHTML(toggleBtn, 'toggle menu')
     toggleBtn.addEventListener('click', e => document.body.classList.toggle('hide-menu'))
-    document.querySelector('nav').appendChild(toggleBtn)
+    append(toggleBtn, 'nav')
+  }
+
+  /**
+   * This function changes the innerHTML for the passed element
+   * @param element: the element to change the inner HTML for
+   * @param innerHTML: the stuff that goes in to the inner HTML
+   */
+  function setInnerHTML(element, innerHTML) {
+    element.innerHTML = innerHTML
+  }
+
+  /**
+   * Creates a <button> element and returns it
+   */
+  function createButton() {
+    return document.createElement('button')
+  }
+
+  /**
+   * Appends a HTML element to a parent
+   * @param element: the element to append
+   * @param parent : the parent to append to
+   */
+  function append(element, parent) {
+    document.querySelector(parent).appendChild(element)
   }
 })();
