@@ -62,14 +62,10 @@
   }
 
   function toggleNav() {
-    const body = document.body;
-    const nav = document.querySelector('nav');
-    const toggleBtn = document.createElement('button');
-    toggleBtn.innerHTML = 'toggle menu';
+    let toggleBtn = document.createElement('button')
+    toggleBtn.innerHTML = 'toggle menu'
 
-    toggleBtn.addEventListener('click', e =>
-      body.classList.toggle('hide-menu')
-    );
-    nav.appendChild(toggleBtn);
+    toggleBtn.addEventListener('click', e => document.body.classList.toggle('hide-menu'))
+    document.querySelector('nav').appendChild(toggleBtn)
   }
 })();
