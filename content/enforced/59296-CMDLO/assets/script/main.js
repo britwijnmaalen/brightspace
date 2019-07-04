@@ -1,31 +1,74 @@
-
 /*
 *
 * Loosely based on:
 *   - https://dev.to/shoupn/javascript-fetch-api-and-using-asyncawait-47mp
 *   - https://dev.to/niinpatel/converting-xml-to-json-using-recursion-2k4j
-*   - 
+*   -
 */
+(() => {
+  toggleNav();
 
-const feeds = {
-  cmdlo: "https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296",
-  fdmci: "https://www.hva.nl/faculteit/fdmci/nieuws/nieuwsoverzicht.rss"
-}
+  if (document.body.contains(document.getElementById('news'))) {
+    getNews();
+  }
 
-// async function getFeedAsync(url) {
-//   return await fetch('https://cors-anywhere.herokuapp.com/'+url, {method: 'GET'})
-// }
+  function getNews() {
+    const feeds = {
+      cmdlo: 'https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296',
+      fdmci: 'http://www.hva.nl/faculteit/fdmci/nieuws/nieuwsoverzicht.rss',
+      proxy: 'https://cors-anywhere.herokuapp.com/',
+      local: './assets/script/rss.xml'
+    };
+    const newsContainer = document.getElementById('news');
 
-// async function parseFeedAsync(data) {
-//     console.log(data)
-// }
+    let url =
+      window.location.hostname === 'cmda.github.io' ||
+      window.location.hostname === 'localhost'
+        ? feeds.local
+        : feeds.cmdlo;
 
-fetch(feeds.cmdlo)
-  .then(response => response.text())
-  .then(xmlstr => (new window.DOMParser()).parseFromString(xmlstr, "text/xml"))
-  .then(data => console.log(data))
+    fetch(url)
+      .then(response => response.text())
+      .then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
+      .then(xml => {
+        const data = xml2json(xml);
+        const items = data.rss.channel.item;
 
-fetch(feeds.fdmci)
-  .then(response => response.text())
-  .then(xmlstr => (new window.DOMParser()).parseFromString(xmlstr, "text/xml"))
-  .then(data => console.log(data))
+        const newsItems = items
+          .map(
+            item => `
+        <article>
+          <header>
+            <h1>${item.title}</h1>
+            <time>${convertDate(item.pubDate)}</time>
+
+            <a href="#" rel="author">${item.author}</a>
+
+          </header>
+
+          <p>${item.description}</p>
+
+        </article>
+      `
+          )
+          .join('');
+
+        newsContainer.insertAdjacentHTML('afterend', newsItems);
+      });
+  }
+
+  function convertDate(date) {
+    return new Intl.DateTimeFormat().format(new Date(date));
+  }
+
+  function toggleNav() {
+    const body = document.body;
+    const toggleBtn = document.createElement('button');
+    toggleBtn.innerHTML = 'toggle menu';
+
+    toggleBtn.addEventListener('click', e =>
+      body.classList.toggle('hide-menu')
+    );
+    document.body.appendChild(toggleBtn);
+  }
+})();
