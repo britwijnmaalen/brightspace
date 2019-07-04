@@ -58,7 +58,7 @@
   }
 
   /**
-   * This function converts a dat into Intl.DateTimeFormat
+   * This function converts a date into Intl.DateTimeFormat
    * @param date: date to convert
    */
   function convertDate(date) {
