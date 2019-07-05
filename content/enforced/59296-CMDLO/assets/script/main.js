@@ -1,31 +1,33 @@
 /*
-*
-* Loosely based on:
+* TODO: Strive for monads only (https://curiosity-driven.org/monads-in-javascript)
+* 
+* Not at all based on:
 *   - https://dev.to/shoupn/javascript-fetch-api-and-using-asyncawait-47mp
 *   - https://dev.to/niinpatel/converting-xml-to-json-using-recursion-2k4j
 *   -
 */
 (() => {
-  toggleNav();
-
-  if (document.body.contains(document.getElementById('news'))) {
-    getNews();
+  // define constants
+  const feeds = {
+    cmdlo: 'https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296',
+    fdmci: 'http://www.hva.nl/faculteit/fdmci/nieuws/nieuwsoverzicht.rss',
+    proxy: 'https://cors-anywhere.herokuapp.com/',
+    local: './assets/script/rss.xml'
   }
 
-  function getNews() {
-    const feeds = {
-      cmdlo: 'https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296',
-      fdmci: 'http://www.hva.nl/faculteit/fdmci/nieuws/nieuwsoverzicht.rss',
-      proxy: 'https://cors-anywhere.herokuapp.com/',
-      local: './assets/script/rss.xml'
-    };
-    const newsContainer = document.getElementById('news');
+  // invoke constructor?
+  toggleNav()
 
-    let url =
-      window.location.hostname === 'cmda.github.io' ||
-      window.location.hostname === 'localhost'
-        ? feeds.local
-        : feeds.cmdlo;
+  // create another script that we only include in index?
+  if (document.body.contains(document.getElementById('news'))) {
+    getNews()
+  }
+
+  // does way to much... but it works!
+  function getNews() {
+
+    const newsContainer = document.getElementById('news');
+    let url = window.location.hostname === 'cmda.github.io' || window.location.hostname === 'localhost' ? feeds.local : feeds.cmdlo
 
     fetch(url)
       .then(response => response.text())
@@ -68,6 +70,8 @@
   /**
    * This function creates a button to toggle the navigation using a CSS
    * class juggling event listener toggling the 'hide-menu' class.
+   * 
+   * DOES TOO MUCH, REFACTOR!
    */
   function toggleNav() {
     let toggleBtn = createElement('button');
@@ -88,7 +92,7 @@
   }
 
   /**
-   * Creates a <button> element and returns it
+   * Creates an element and returns it
    */
   function createElement(element) {
     return document.createElement(element);
@@ -102,4 +106,4 @@
   function append(element, parent) {
     document.querySelector(parent).appendChild(element);
   }
-})();
+})(); // the dogs balls
