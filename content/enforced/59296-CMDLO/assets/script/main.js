@@ -62,7 +62,7 @@
    * @param date: date to convert
    */
   function convertDate(date) {
-    return new Intl.DateTimeFormat().format(new Date(date))
+    return new Intl.DateTimeFormat().format(new Date(date));
   }
 
   /**
@@ -70,10 +70,12 @@
    * class juggling event listener toggling the 'hide-menu' class.
    */
   function toggleNav() {
-    let toggleBtn = createButton()
-    setInnerHTML(toggleBtn, 'toggle menu')
-    toggleBtn.addEventListener('click', e => document.body.classList.toggle('hide-menu'))
-    append(toggleBtn, 'nav')
+    let toggleBtn = createElement('button');
+    setInnerHTML(toggleBtn, 'toggle menu');
+    toggleBtn.addEventListener('click', e =>
+      document.body.classList.toggle('hide-menu')
+    );
+    append(toggleBtn, 'nav');
   }
 
   /**
@@ -82,14 +84,14 @@
    * @param innerHTML: the stuff that goes in to the inner HTML
    */
   function setInnerHTML(element, innerHTML) {
-    element.innerHTML = innerHTML
+    element.innerHTML = innerHTML;
   }
 
   /**
    * Creates a <button> element and returns it
    */
-  function createButton() {
-    return document.createElement('button')
+  function createElement(element) {
+    return document.createElement(element);
   }
 
   /**
@@ -98,6 +100,6 @@
    * @param parent : the parent to append to
    */
   function append(element, parent) {
-    document.querySelector(parent).appendChild(element)
+    document.querySelector(parent).appendChild(element);
   }
 })();
