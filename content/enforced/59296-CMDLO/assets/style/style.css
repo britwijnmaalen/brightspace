@@ -23,6 +23,9 @@ time:after {
   content: '|';
   padding: 0 0.25em;
 }
+img {
+  max-width: 100%;
+}
 /**** HEADER ****/
 body > header {
   order: 1;
