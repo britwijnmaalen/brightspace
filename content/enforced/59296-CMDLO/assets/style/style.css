@@ -65,6 +65,9 @@ header p {
   font-size: 1.25em;
   background-color: #fff;
 }
+body > header {
+  display: none;
+}
 
 /**** MENU NAVIGATION ****/
 nav {
@@ -177,7 +180,7 @@ footer {
   }
 
   /**** MENU NAVIGATION ****/
-  body > nav {
+  body nav {
     background-color: transparent;
     grid-column: 1 / 2;
     grid-row: 2 / 4;
