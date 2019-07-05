@@ -26,6 +26,9 @@ time:after {
 img {
   max-width: 100%;
 }
+th {
+  text-align: left;
+}
 /**** HEADER ****/
 body > header {
   order: 1;
