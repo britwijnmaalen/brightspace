@@ -74,7 +74,7 @@ nav {
   padding: 0 1rem;
   order: 3;
   background-color: #fff;
-  margin: 1rem -1rem;
+  margin: 0 -1rem;
 }
 nav h1 {
   margin: 0;
@@ -124,15 +124,18 @@ main > nav {
 
 /**** MAIN ****/
 main {
-  padding: 1rem 0;
+  padding: 0;
   grid-column: 2 / 5;
   grid-row: 2 / 3;
   order: 2;
 }
 
 main h2 {
-  font-size: 1em;
+  font-size: 1.25em;
   margin: 0;
+}
+main h3 {
+  font-size: 1em;
 }
 main p {
   margin-top: 0;
@@ -162,14 +165,11 @@ footer {
     margin: 1rem auto;
     display: grid;
     grid-template-columns: 12em 6fr;
-    grid-template-rows: 3em auto 5em;
+    grid-template-rows: auto 5em;
     overflow-x: hidden;
   }
 
   body > header {
-    grid-column: 1 / 5;
-    grid-row: 1 / 2;
-    padding: 0 1rem;
   }
   body > header a,
   body > header a * {
@@ -183,8 +183,8 @@ footer {
   body nav {
     background-color: transparent;
     grid-column: 1 / 2;
-    grid-row: 2 / 4;
-    margin: 1.8rem 0;
+    grid-row: 1 / 3;
+    margin: 0.8rem 0 0;
     padding-top: 1rem;
     transition: 0.25s;
   }
@@ -215,7 +215,7 @@ footer {
   /**** MAIN ****/
   main {
     grid-column: 2 / 5;
-    grid-row: 2 / 3;
+    grid-row: 1 / 3;
     max-width: 40em;
     transition: 0.25s;
   }
@@ -226,7 +226,7 @@ footer {
   /**** FOOTER ****/
   footer {
     grid-column: 2 / 5;
-    grid-row: 3 / 4;
+    grid-row: 2 / 3;
     display: flex;
     align-items: flex-end;
     margin-bottom: 1.2rem;
