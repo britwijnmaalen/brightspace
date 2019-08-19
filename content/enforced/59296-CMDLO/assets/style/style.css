@@ -234,7 +234,12 @@ footer {
 }
 
 
-/* COPY PASTE UIT BRIGHTSPACE */
+/****************************
+*****************************
+COPY PASTE UIT MOODLE *******
+*****************************
+****************************/
+
 /* geknutsel van Sanne aan dingen waar hij zich al tijden aan stoorde */
 
 /* hidden span die uitlijning verstoren in view mode*/
@@ -754,9 +759,8 @@ table.jaarplannav td.blank,  table.jaarcurnav td.blank {
 }
 
 
-
 /* ## propedeuse in en uitklap ## */
-  
+
 * ~ input[name="cluster"]:first-of-type + label {
  margin-top: 1.5em;
 }
