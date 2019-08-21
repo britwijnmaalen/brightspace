@@ -11,6 +11,7 @@
   }
   h1 {
     font-weight: 300;
+    margin-bottom: 0;
   }
 
   a {
@@ -147,6 +148,9 @@
     grid-row: 2 / 3;
     order: 2;
   }
+  main header {
+    margin-bottom: 1em;
+  }
 
   main h2 {
     font-size: 1.5em;
@@ -160,7 +164,7 @@
 
   main p {
     margin-top: 0;
-    line-height: 1.5;
+    line-height: 1.75;
   }
 
   main article {
@@ -277,25 +281,27 @@ table {
 table a {
   text-decoration: none;
 }
-table a:hover {
-  text-decoration: underline;
-}
 
 table th,
 table td {
   padding: 0.2em 0.4em;
   border: 1px #fff solid;
-  background: #8e8e8e;
+  background: #ccc;
   text-align: center;
   font-size: 0.8em;
 }
 
-table td {
+table th {
+  white-space: nowrap;
+}
+table th ul {
+  list-style: none;
   padding: 0;
 }
 
 table td {
   background: #eee;
+  padding: 0;
 }
 
 table td.keuzevak {
@@ -334,14 +340,16 @@ table span {
   opacity: 0.6;
 }
 
-table.cyaan th {
+table.cyaan th,
+table.cyaan a:hover {
   background: rgba(25, 255, 255, 1);
 }
 table.cyaan td {
   background: rgba(229, 255, 255, 1);
 }
 
-table.magenta th {
+table.magenta th,
+table.magenta a:hover {
   background: rgba(255, 25, 255, 1);
   color: white;
 }
@@ -349,14 +357,16 @@ table.magenta td {
   background: rgba(255, 229, 255, 1);
 }
 
-table.yellow th {
+table.yellow th,
+table.yellow a:hover {
   background: rgba(255, 229, 25, 1);
 }
 table.yellow td {
   background: rgba(255, 255, 225, 1);
 }
 
-table.key th {
+table.key th,
+table.key a:hover {
   background: rgb(51, 51, 51);
   color: white;
 }
