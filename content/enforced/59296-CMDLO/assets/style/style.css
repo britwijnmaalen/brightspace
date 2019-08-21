@@ -151,10 +151,12 @@
   main header {
     margin-bottom: 1em;
   }
-
+  main section h1 {
+    font-weight: bold;
+  }
   main h2 {
     font-size: 1.5em;
-    margin: 0 0 0.5em;
+    margin: 1.5em 0 0.25em;
     font-weight: 300;
   }
 
@@ -405,7 +407,7 @@ input[id='clusterKey']:checked ~ .cluster.tabbed[title='Key'] {
 
 input[name='cluster'] + label {
   display: inline-block;
-  margin: 0 0.125em 0.25em 0;
+  margin: 0 0.5em 0.25em 0;
 }
 
 input[name='cluster'] + label:last-of-type {
