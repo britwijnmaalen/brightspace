@@ -1,161 +1,186 @@
 /******** SINGLE COLUMN ********/
+@media (min-width: 0) {
+  /**** GENERIC ****/
+  body {
+    font-family: Lato, 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+  h1 {
+    font-weight: 300;
+  }
 
-/**** GENERIC ****/
-body {
-  font-family: Lato, 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
-  color: #333;
-  background-color: #f9f9f9;
-  display: flex;
-  flex-direction: column;
-  margin: 1rem;
-}
+  a {
+    color: #333;
+  }
 
-a {
-  color: #333;
-}
-a:hover,
-a:focus,
-a.active {
-  background-color: #eee;
-}
+  a:hover,
+  a:focus,
+  a.active {
+    background-color: #eee;
+  }
 
-time:after {
-  content: '|';
-  padding: 0 0.25em;
-}
-img {
-  max-width: 100%;
-}
-th {
-  text-align: left;
-}
-/**** HEADER ****/
-body > header {
-  order: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-}
-body > header:after {
-  content: '';
-  background-image: url('../image/icons/cmd_icon_robot.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 3em;
-  height: 3em;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: rotate(10deg);
-}
+  time:after {
+    content: '|';
+    padding: 0 0.25em;
+  }
 
-body > header h1 {
-  margin: 0;
-}
-header h1 em {
-  font-style: normal;
-  background-color: #000;
-  color: #fff;
-  margin-right: 0.1em;
-  padding: 0 0.3em;
-}
-header p {
-  margin: 0;
-  font-size: 1.25em;
-  background-color: #fff;
-}
-body > header {
-  display: none;
-}
+  img {
+    max-width: 100%;
+  }
 
-/**** MENU NAVIGATION ****/
-nav {
-  padding: 0 1rem;
-  order: 3;
-  background-color: #fff;
-  margin: 0 -1rem;
-}
-nav h1 {
-  margin: 0;
-  font-weight: 700;
-  line-height: 1.25em;
-}
-nav ul {
-  padding: 0;
-  margin: 0 0 1.25em 0;
-  list-style-type: none;
-  border-top: 1px solid #f0f0f0;
-}
-nav ul:first-of-type {
-  border: none;
-}
+  th {
+    text-align: left;
+  }
 
-nav ul li {
-  padding: 0;
-  line-height: 1.25em;
-  border-bottom: 1px solid #f0f0f0;
-  display: flex;
-  position: relative;
-}
-nav ul li:before {
-  content: '\203A\00a0';
-  position: absolute;
-  top: calc(50% - 0.6em);
-  left: 0;
-  display: block;
-  height: 1em;
-}
-nav ul li a {
-  color: #333;
-  padding: 0.5em 0.75em;
-  display: block;
-  width: 100%;
-}
-nav button {
-  display: none;
-}
+  /**** HEADER ****/
+  body > header {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
 
-/**** IN PAGE NAV ****/
+  body > header:after {
+    content: '';
+    background-image: url('../image/icons/cmd_icon_robot.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(10deg);
+  }
 
-main > nav {
-  display: block;
-}
+  body > header h1 {
+    margin: 0;
+  }
 
-/**** MAIN ****/
-main {
-  padding: 0;
-  grid-column: 2 / 5;
-  grid-row: 2 / 3;
-  order: 2;
-}
+  header h1 em {
+    font-style: normal;
+    background-color: #000;
+    color: #fff;
+    margin-right: 0.1em;
+    padding: 0 0.3em;
+  }
 
-main h2 {
-  font-size: 1.25em;
-  margin: 0;
-}
-main h3 {
-  font-size: 1em;
-}
-main p {
-  margin-top: 0;
-}
+  header p {
+    margin: 0;
+    font-size: 1.25em;
+    background-color: #fff;
+  }
 
-main article {
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #f0f0f0;
-}
-main article header h1 {
-  font-size: 1em;
-}
-main article header h1 ~ * {
-  font-size: 0.9em;
-}
+  body > header {
+    display: none;
+  }
 
-/**** FOOTER ****/
-footer {
-  order: 4;
-  display: none !important; /* hide temporarily */
+  /**** MENU NAVIGATION ****/
+  nav {
+    padding: 1rem;
+    order: 3;
+    background-color: #fff;
+    margin: 0 -1rem;
+  }
+
+  nav h1 {
+    margin: 0;
+    font-weight: 300;
+    line-height: 1.25em;
+    font-size: 1.5em;
+  }
+
+  nav ul {
+    padding: 0;
+    margin: 0 0 1.25em 0;
+    list-style-type: none;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  nav ul:first-of-type {
+    border: none;
+  }
+
+  nav ul li {
+    padding: 0;
+    line-height: 1.25em;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    position: relative;
+  }
+
+  nav ul li:before {
+    content: '\203A\00a0';
+    position: absolute;
+    top: calc(50% - 0.7em);
+    left: 0.2rem;
+    display: block;
+    height: 1em;
+  }
+
+  nav ul li a {
+    color: #333;
+    padding: 0.5em 0.5em 0.5em 1em;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+  }
+
+  nav button {
+    display: none;
+  }
+
+  /**** IN PAGE NAV ****/
+  main > nav {
+    display: block;
+  }
+
+  /**** MAIN ****/
+  main {
+    padding: 0;
+    grid-column: 2 / 5;
+    grid-row: 2 / 3;
+    order: 2;
+  }
+
+  main h2 {
+    font-size: 1.5em;
+    margin: 0 0 0.5em;
+    font-weight: 300;
+  }
+
+  main h3 {
+    font-size: 1em;
+  }
+
+  main p {
+    margin-top: 0;
+  }
+
+  main article {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  main article header h1 {
+    font-size: 1em;
+  }
+
+  main article header h1 ~ * {
+    font-size: 0.9em;
+  }
+
+  /**** FOOTER ****/
+  footer {
+    order: 4;
+    display: none !important;
+    /* hide temporarily */
+  }
 }
 
 /******** >=TABLET ********/
@@ -164,17 +189,19 @@ footer {
     max-width: 73em;
     margin: 1rem auto;
     display: grid;
-    grid-template-columns: 12em 6fr;
+    grid-template-columns: 15em 6fr;
     grid-template-rows: auto 5em;
     overflow-x: hidden;
   }
 
   body > header {
   }
+
   body > header a,
   body > header a * {
     text-decoration: none;
   }
+
   body > header a:hover {
     background-color: transparent;
   }
@@ -185,16 +212,18 @@ footer {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     margin: 0.8rem 0 0;
-    padding-top: 1rem;
     transition: 0.25s;
   }
+
   body.hide-menu nav {
     transform: translateX(-30em);
   }
+
   nav ul,
   nav ul li {
     border: none;
   }
+
   nav button {
     display: block;
     border: none;
@@ -205,6 +234,7 @@ footer {
     padding: 0.5em 0.25em;
     box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
   }
+
   body.hide-menu nav button {
     position: absolute;
     bottom: 1rem;
@@ -212,6 +242,7 @@ footer {
     transform: translateX(43.5em);
     height: 2em;
   }
+
   /**** MAIN ****/
   main {
     grid-column: 2 / 5;
@@ -219,6 +250,7 @@ footer {
     max-width: 40em;
     transition: 0.25s;
   }
+
   body.hide-menu main {
     transform: translateX(-11em);
   }
@@ -233,1049 +265,173 @@ footer {
   }
 }
 
-
-/****************************
-*****************************
-COPY PASTE UIT MOODLE *******
-*****************************
-****************************/
-
-/* geknutsel van Sanne aan dingen waar hij zich al tijden aan stoorde */
-
-/* hidden span die uitlijning verstoren in view mode*/
-.course-content ul.topics li.section .left {
-  padding:0;
-}
-body.editing .course-content ul.topics li.section .left {
-  padding:22px 6px 0;
-} 
-
-/* onnodige witruimte aan de linkerkant */
-.course-content ul.topics li.section .summary,
-.course-content ul.weeks li.section .summary {
-   margin-left:0;
-}
-
-.section .activity .availabilityinfo {
-  margin-top:0 !important;
-  margin-bottom:10px !important;
-}
-
-/* lijstjes uitlijnen met elementen*/
-.course-content ul.topics li.section ul:not(.section),
-.course-content ul.weeks li.section ul:not(.section),
-.course-content ul.topics li.section ol:not(.section),
-.course-content ul.weeks li.section ol:not(.section),
-#page-content .generalbox ul,
-#page-content .generalbox ol {
-  margin-left:27px;
-}
-
-.course-content ul.topics li.section li,
-.course-content ul.weeks li.section li,
-#page-content .generalbox li {
-   padding-left:2px;
-}
-
-.course-content ul.topics li.section li + li,
-.course-content ul.weeks li.section li + li,
-#page-content .generalbox li + li {
-   padding-top:3px;
-}
-
-/* items uitlijnen met lijstjes en summary */
-.course-content ul.section {
-  margin:0 0 10px;
-}
-
-.course-content ul.section .activityinstance {
-  margin-left: -4px !important;
-}
-
-.course-content ul.section .activityinstance img.activityicon {
-  float:left;
-  transform:translateX(3px);
-}
-
-/* label uitlijnen met tekst */
-.section .activity.modtype_label.label,
-.section .activity.modtype_label.label .no-overflow {
-  padding:6px 0 0;
-}
-
-.course-content ul.section .mod-indent-outer {
-  padding-left:0;
-}
-
-@media (max-width: 630px) {
-  .course-content ul.topics li.section {
-     padding-left:20px !important;
-     padding-right:20px !important;
-  }
-}
-
-
-/* ### Header ### */
-
-   #page-header {
-       background: #FFF021 url(/pluginfile.php/2/theme_decaf/logo/1443521752/cmd-logo-header.png) center 21px no-repeat;
-       padding-left: 0;
-   }
-
-   #page-footer {
-       background: url(https://static.hva.nl/img/logo.svg) center bottom no-repeat;
-       background-size: 25%;
-       padding-bottom: 50px;
-   }
-
-   .block .header .title h2 {
-       text-shadow: none;
-   }
-
-   #page-header h1 {
-       display: none;
-   }
-
-   #page-header a.logo {
-       display: none;
-   }
-   /* Moodle update fixes... */
-
-   .page-context-header .page-header-image {
-       display: none;
-   }
-
-   #page-content {
-       margin-top: 1em;
-   }
-
-   .container-fluid {
-       max-width: 1280px;
-   }
-
-   .breadcrumb {
-       background-color: transparent;
-   }
-
-   .breadcrumb-nav,
-   .breadcrumb-button {
-       margin-top: 2em;
-       padding-left: .4em;
-       padding-right: .4em;
-   }
-
-   ul.breadcrumb li:first-of-type {
-       display: none;
-   }
-
-   ul.breadcrumb li a {
-       text-decoration: none;
-   }
-
-   .page-context-header {
-       height: 70px;
-   }
-
-   a.btn-navbar {
-       display: none;
-   }
-
-   @media (max-width: 979px) {
-       .navbar .btn-navbar {
-           display: none;
-       }
-   }
-
-   /* ### Typography ### */
-
-   body,
-   h1,
-   h2,
-   h3,
-   h4,
-   h5,
-   h6,
-   p,
-   ul,
-   ol,
-   dl,
-   input,
-   textarea {
-       @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800);
-       font-family: 'Open Sans', sans-serif;
-   }
-
-   h1,
-   h2,
-   h3,
-   h4,
-   h5,
-   h6,
-   th {
-       font-weight: 300;
-       line-height: 130%;
-       margin-bottom: 5px;
-   }
-
-  h4 {
-     margin-top: 20px;
-  }
-
-   .block .header h2 {
-       font-weight: normal;
-       font-family: 'Open Sans', sans-serif;
-       font-size: 1em;
-       padding: 0;
-       color: #333;
-   }
-
-   a,
-   a:link,
-   a:visited,
-   a:active,
-   .autolink {
-       color: #444;
-   }
-   /* links altijd onderstrepen op content pagina's en in de wysiwyg editor */
-
-   #region-main .generalbox a,
-   form .feditor a {
-       text-decoration: underline;
-       color: #1D8AC3;
-   }
-
-   p a,
-   p a:visited,
-   p a:active,
-   p a.autolink,
-   p a.autolink:visited,
-   p a.autolink:active {
-       text-decoration: underline;
-       color: #1D8AC3;
-   }
-
-   .topics p {
-       margin-bottom: 10px;
-   }
-   /* ### Style Fixes ### */
-   /* Fix blocks */
-
-   .block {
-       background: transparent;
-       border: 0;
-       border-radius: 0;
-       border-color: transparent;
-       box-shadow: none;
-   }
-   /* underline in content */
-
-   .content a,
-   .contents a,
-   .section a,
-   [role="main"] a {
-       text-decoration: underline;
-   }
-   /*code coloring*/
-
-   html body .answer code,
-   html body .answer pre {
-       color: lime;
-   }
-
-   html body .qtext pre,
-   html body .answer pre {
-       background-color: #000 !important;
-       /* for better contrast and nerdiness */
-   }
-
-   html body .qtext pre code {
-       padding: initial;
-       /* instead of inherit which generates an unintentional indent on the first line */
-   }
-
-   .que.multichoice .answer>div {
-       display: flex;
-   }
-
-   input[type="radio"]+label,
-   input[type="checkbox"]+label {
-       flex-grow: 1;
-   }
-
-   .subquestion input {
-       margin-bottom: 0;
-   }
-   /*/code coloring*/
-
-   html body .qtext code {
-       color: lime;
-       background: none !important;
-       background-color: #000 !important;
-       border: none;
-       padding: inherit;
-   }
-
-   .qtext p {
-       text-shadow: none;
-   }
-
-   #page-mod-quiz-edit ul.slots li.section li.activity .activityinstance {
-       left: 12em;
-   }
-
-   .mform fieldset.collapsible legend a.fheader {
-       margin-left: -5px;
-   }
-
-   #page-course-index-category .generalbox.info,
-   html body #region-main .generalbox.info {
-       border: none;
-   }
-
-   .coursebox {
-       border-radius: 0;
-   }
-
-   .coursebox.collapsed {
-       margin-bottom: 10px;
-   }
-
-   .dropdown-menu .divider {
-       margin: 0;
-   }
-
-   .dropdown-menu li:hover {
-       background: #76B900;
-   }
-
-   .navbar .btn-navbar,
-   .navbar .btn-navbar:hover {
-       background: #ccc;
-       border: none;
-       box-shadow: none;
-       border-radius: 0;
-   }
-
-   .navbar .btn-navbar .icon-bar {
-       border: none;
-       box-shadow: none;
-       border-radius: 0;
-       width: 22px;
-       height: 3px;
-       margin: 4px 0;
-   }
-
-   .navbar .btn-navbar .icon-bar:first-of-type {
-       margin-top: 0;
-   }
-
-   .navbar .btn-navbar .icon-bar:last-of-type {
-       margin-bottom: 0;
-   }
-
-   img.iconlarge {
-       width: 24px;
-       height: 24px;
-   }
-
-   .activityinstance {
-       margin-left: -9px;
-   }
-
-   #back-to-top a.arrow {
-       border-radius: 0;
-       background: rgba(255, 255, 255, 0.6);
-       color: #000;
-   }
-
-   .breadcrumb-nav .brand {
-       display: none;
-   }
-
-   .breadcrumb .divider {
-       display: none;
-   }
-
-   .breadcrumb li:not(:last-child):after {
-       content: '\00a0\203A\00a0';
-   }
-
-   .breadcrumb li:last-child a {
-       text-decoration: underline;
-   }
-
-   .breadcrumb {
-       padding-left: 0;
-   }
-
-   .block_course_overview .content {
-       margin: 0;
-   }
-
-   .block .content {
-       padding: 0;
-   }
-
-   .coursebox {
-       margin: 8px 0;
-   }
-
-   .course-content #completionprogressid {
-       float: none;
-   }
-
-   .course-content ul.topics li.section .left {}
-
-   #back-to-top {
-       bottom: 10px;
-       right: 10px;
-   }
-
-   aside#block-region-side-post .header {
-       margin-bottom: 10px;
-   }
-
-   .content ul,
-   .content ol {
-       margin-bottom: 10px;
-   }
-   /* fix images to always fit */
-
-   #page-content img {
-       max-width: 100%;
-   }
-   /* AdK: AND FIX FOR WHERE THE ABOVE RULE FAILS */
-
-   #page-content img.userpicture {
-       max-width: none;
-   }
-
-   /* ### Vakoverzicht  tabel ### */
-
+/**** Copy Moodle ****/
+/* ### Vakoverzicht  tabel ### */
 table {
- border-collapse: collapse;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+table a {
+  text-decoration: none;
+}
+table a:hover {
+  text-decoration: underline;
 }
 
-table.jaarplannav,
 table.jaarcurnav {
- width: 100%;
- margin-top: 10px;
+  width: 100%;
+  margin-top: 10px;
 }
-table.jaarplannav th,
-table.jaarplannav td,
+
 table.jaarcurnav th,
 table.jaarcurnav td {
- padding: .2em .4em;
- border: 1px #fff solid;
- background: #8e8e8e;
- text-align: center;
+  padding: 0.2em 0.4em;
+  border: 1px #fff solid;
+  background: #8e8e8e;
+  text-align: center;
+  font-size: 0.8em;
 }
 
 table.jaarcurnav td {
- padding:0;
+  padding: 0;
 }
 
-table.jaarplannav td,
 table.jaarcurnav td {
- background: #c5c5c5;
+  background: #eee;
 }
-table.jaarplannav td.keuzevak,
+
 table.jaarcurnav td.keuzevak {
- background: #999;
+  background: #999;
 }
-table.jaarplannav thead th,
+
 table.jaarcurnav thead th {
- width: 23%;
+  width: 23%;
 }
-table.jaarplannav thead th:first-child,
+
 table.jaarcurnav thead th:first-child {
- width: auto;
+  width: auto;
 }
-table.jaarplannav tbody tr th,
+
 table.jaarplannav tbody tr td {
- padding: 1.3em .65em;
- line-height: 1.3em;
+  padding: 1.3em 0.65em;
+  line-height: 1.3em;
 }
-table.jaarcurnav tbody tr th,
+
 table.jaarcurnav tbody tr a {
- line-height: 1.3em;
+  line-height: 1.3em;
 }
 
 table.jaarcurnav tbody tr:not(:last-of-type) a {
- min-height:5em;
- padding: 0 .65em;
- display: flex;
- flex-direction: column;
- justify-content: center;
+  min-height: 5em;
+  padding: 0 0.65em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-table.jaarcurnav tbody tr a[title="SLC"] {
- min-height:3.5em;
+table.jaarcurnav tbody tr a[title='SLC'] {
+  min-height: 3.5em;
 }
 
-#region-main table.jaarcurnav a {
- color:#333;
- text-decoration:none;
+table.jaarcurnav span {
+  display: block;
+  clear: both;
+  font-size: 0.9em;
+  padding-top: 0.1em;
+  opacity: 0.6;
 }
 
-#region-main table.jaarcurnav a:hover span:first-of-type {
- text-decoration:underline;
+table.jaarcurnav.cyaan th {
+  background: rgba(25, 245, 245, 1);
 }
 
-table.jaarplannav p,
-table.jaarcurnav p {
- margin: 0;
+table.jaarcurnav.magenta th {
+  background: rgba(245, 25, 245, 1);
+  color: white;
 }
 
-table.jaarplannav td p,
-table.jaarplannav td span,
-table.jaarcurnav span:nth-of-type(2) {
- display: block;
- clear: both;
- font-size: .9em;
- padding-top: .1em;
- opacity: .6;
+table.jaarcurnav.yellow th {
+  background: #fee219;
 }
 
-table.jaarplannav.cyaan th,  table.jaarcurnav.cyaan th {
- background: rgba(25, 245, 245, 1);
-}
-table.jaarplannav.magenta th,  table.jaarcurnav.magenta th {
- background: rgba(245, 25, 245, 1);
-       color: white;
-}
-table.jaarplannav.yellow th,  table.jaarcurnav.yellow th {
- background: #FEE219;
-}
-table.jaarplannav.key th,  table.jaarcurnav.key th {
- background: rgb(51,51,51);
- color: white;
-}
-table.jaarplannav td.profilering,  table.jaarcurnav td.profilering {
- background: #e1e1e1;
-}
-table.jaarplannav td.blank,  table.jaarcurnav td.blank {
- background: transparent;
+table.jaarcurnav.key th {
+  background: rgb(51, 51, 51);
+  color: white;
 }
 
+table.jaarcurnav td.profilering {
+  background: #e1e1e1;
+}
+
+table.jaarcurnav td.blank {
+  background: transparent;
+}
 
 /* ## propedeuse in en uitklap ## */
-
-* ~ input[name="cluster"]:first-of-type + label {
- margin-top: 1.5em;
+* ~ input[name='cluster']:first-of-type + label {
+  margin-top: 1.5em;
 }
 
 .cluster.tabbed {
- display: none;
-}
-input[name="cluster"] {
- width:0;
- height:0;
- position:absolute;
- opacity:0;
+  display: none;
 }
 
-input[id="clusterCyaan"]:checked ~ .cluster.tabbed[title="Cyaan"], 
-input[id="clusterMagenta"]:checked ~ .cluster.tabbed[title="Magenta"], 
-input[id="clusterYellow"]:checked ~ .cluster.tabbed[title="Yellow"], 
-input[id="clusterKey"]:checked ~ .cluster.tabbed[title="Key"] {
- display: block;
- padding-top: .5em;
+input[name='cluster'] {
+  width: 0;
+  height: 0;
+  position: absolute;
+  opacity: 0;
 }
 
-input[name="cluster"] + label {
- display: inline-block;
- margin: 0 .125em .25em 0;
+input[id='clusterCyaan']:checked ~ .cluster.tabbed[title='Cyaan'],
+input[id='clusterMagenta']:checked ~ .cluster.tabbed[title='Magenta'],
+input[id='clusterYellow']:checked ~ .cluster.tabbed[title='Yellow'],
+input[id='clusterKey']:checked ~ .cluster.tabbed[title='Key'] {
+  display: block;
+  padding-top: 0.5em;
 }
 
-input[name="cluster"] + label:last-of-type {
- margin: 0;
+input[name='cluster'] + label {
+  display: inline-block;
+  margin: 0 0.125em 0.25em 0;
 }
 
-input[name="cluster"] + label h5 {
- margin: 0;
- padding: .375em .5em;
- background: #c5c5c5;
- border-radius: .375em;
- transition: background .5s;
+input[name='cluster'] + label:last-of-type {
+  margin: 0;
 }
 
-input[id="clusterCyaan"]:hover + label h5, input[id="clusterCyaan"]:checked + label h5 {
- background: rgba(25, 245, 245,1);
+input[name='cluster'] + label h2 {
+  margin: 0;
+  padding: 0.375em 0.5em;
+  background: #eee;
+  border-radius: 0.375em;
+  transition: background 0.5s;
+  font-size: 1em;
+  font-weight: normal;
 }
-input[id="clusterMagenta"]:hover + label h5, input[id="clusterMagenta"]:checked + label h5 {
- background: rgba(245, 25, 245,1);
-       color: white;
+
+input[id='clusterCyaan']:hover + label h2,
+input[id='clusterCyaan']:checked + label h2 {
+  background: rgba(25, 245, 245, 1);
 }
-input[id="clusterYellow"]:hover + label h5, input[id="clusterYellow"]:checked + label h5 {
- background: #FEE219;
+
+input[id='clusterMagenta']:hover + label h2,
+input[id='clusterMagenta']:checked + label h2 {
+  background: rgba(245, 25, 245, 1);
+  color: white;
 }
-input[id="clusterKey"]:hover + label h5, input[id="clusterKey"]:checked + label h5 {
- background: rgb(51,51,51);
- color: white;
+
+input[id='clusterYellow']:hover + label h2,
+input[id='clusterYellow']:checked + label h2 {
+  background: #fee219;
+}
+
+input[id='clusterKey']:hover + label h2,
+input[id='clusterKey']:checked + label h2 {
+  background: rgb(51, 51, 51);
+  color: white;
 }
 
 input:focus + label h5 {
- box-shadow:0 0 .5em rgba(0,0,0,.5);
-}
-
-   #region-main .generalbox table.jaarplannav a {
-       color: #444;
-       text-decoration: none;
-   }
-
-   #region-main .generalbox table.jaarplannav a:hover {
-       text-decoration: underline;
-   }
-
-
-   /* ### Hoofdmenu kolom links ### */
-
-   div.categorypicker {
-       display: none;
-   }
-
-   .cmdmenu .header h2,
-   .cmdmenu .header .block_action {
-       display: none;
-   }
-
-   .cmdmenu .header .title {
-       border: 0;
-   }
-
-   .cmdmenu .content p {
-       font-weight: bold;
-       margin-bottom: 5px;
-   }
-
-   .cmdmenu .content p br {
-       display: none;
-   }
-
-   .cmdmenu .content p {
-       margin-bottom: 3px;
-   }
-
-   .cmdmenu .content ul {
-       margin: 0 0 20px 0;
-       list-style-type: none;
-   }
-
-   .cmdmenu .content ul li {
-       padding: 2px 0;
-   }
-
-   .cmdmenu .content ul li:before {
-       content: '\203A\00a0';
-   }
-   /* ### Docentenlijst ### */
-
-   #addressbook {
-       margin-bottom: 10px;
-   }
-
-   #addressbook th {
-       background: #009B8F;
-       color: #fff;
-       font-weight: bold;
-       font-size: 16px;
-   }
-
-   #addressbook tr:nth-of-type(odd) {
-       background: #f4f2f1;
-       padding: 3px;
-   }
-
-   #addressbook td,
-   #addressbook th {
-       padding: 7px;
-   }
-
-   .course-content ul.topics li.section {
-       margin: 0;
-       padding: 10px 0;
-   }
-
-   .topics>li:nth-of-type(even) {
-       background: #fafafa;
-   }
-
-   .topics>li:nth-of-type(even).current {
-       background: #d9edf7;
-   }
-
-   #page-content {
-       float: none;
-       clear: both;
-   }
-   /* ### Dashboard ### */
-
-   .activity_overview .collapsibleregioncaption:hover {
-       cursor: pointer;
-       text-decoration: underline;
-   }
-   /* ### Enrolment key instructies voor studenten ### */
-
-   div[id^="fitem_enrolpassword_"]::before {
-       content: url(https://oege.ie.hva.nl/~vddxx/moodle/enrollmentkeys.png) !important;
-       padding-bottom: 1.5em;
-   }
-   /* ### Gezocht/gevraagd blok ### */
-
-   div.block_forum_aggregator li.forum_title {
-       display: none
-   }
-
-   div.block_forum_aggregator div.subject {
-       font-size: 1.5em;
-       font-style: normal;
-   }
-
-
-   /* ### Smaller Screens ### */
-
-@media (max-width: 1024px) {
-   table.jaarcurnav th,
-   table.jaarcurnav td {
-       font-size: .9em;
-   }
-}
-
-@media (max-width: 920px) {
-   table.jaarcurnav th,
-   table.jaarcurnav td {
-       font-size: .8em;
-   }
- 
- table.jaarcurnav tbody tr:not(:last-of-type) a {
-      padding-left:.4em;
-   padding-right:.4em;
- }
-}
-
-@media (max-width: 767px) {
-   table.jaarcurnav th,
-   table.jaarcurnav td {
-       font-size: .9em;
-   }
- 
- table.jaarcurnav tbody tr:not(:last-of-type) a {
-    padding-left:.65em;
-   padding-right:.65em;
- }
-}
-
-@media (max-width: 684px) {
-   table.jaarcurnav th,
-   table.jaarcurnav td {
-       font-size: .8em;
-   }
- 
- table.jaarcurnav tbody tr a,
-       table.jaarcurnav tbody tr a[title="SLC"]  {
-     min-height:4em;
-     padding-left:.4em;
-   padding-right:.4em;
- }
- 
- table.jaarcurnav td span:nth-of-type(2){
-    display:none;
- }
-}
-
-@media (max-width: 610px) {
-       table.jaarcurnav tbody td a[title]::before{
-   content: attr(title);
-   }
- 
- table.jaarcurnav tbody th span:last-of-type,
- table.jaarcurnav tbody td a[title] span:first-of-type {
-   display:none;
-   }
-}
-
-@media (max-width: 600px) {
- input[name="cluster"] + label {
-           margin: 0 1px .25em 0;
-       }
-
-       input[name="cluster"] + label h5 {
-   padding: .125em 4vw;
-   font-size: 1em;
-   text-align: center;
-              border-radius:.5em;
- }
- 
- label[for^="cluster"] span {
-   display:block;
-   font-size:.8em;
-   text-transform: lowercase;
-   line-height:.9em;
- }
-}
-
-@media (max-width: 480px) {
- table.jaarcurnav thead th {
-   width: 24%;
- }
- table.jaarcurnav thead th:first-of-type,
- table.jaarcurnav tbody th {
-   min-width:1.6em;
-   max-width:1.6em;
-   width:1.6em;
-   position:relative;
-   padding:.2em 0;
- }
- 
- table.jaarcurnav tbody th p {
-   position:absolute;
-   top:50%;
-   left:50%;
-   transform: translate(-50%, -50%) rotate(-90deg) ;
- }
- 
- table.jaarcurnav tbody th span:last-of-type {
-   display:none;
-   }
-
-       input[name="cluster"] + label h5 {
-   padding: .525em 2.5vw;
-       }
-       
-       label[for^="cluster"] span {
-           display:none;
-       }
-}
-
-
-
-@media (max-width: 630px) {
- .jaarplannav {
-   font-size: 9px;
-   word-break: break-all;
- }
-       
-       .breadcrumb-nav,
-       .breadcrumb-button,
-       .breadcrumb-button input,
-       #page-content {
-           margin:0;
-       }
-       #page-course-index-category .box.generalbox.info {
-           padding:0;
-       }
-       .breadcrumb li:not(:first-child):not(:nth-last-child(-n+2)) {
-           display: none;
-       }
-       #page-course-index-category .box.generalbox.info > div > h1:first-of-type {
-           margin-top:0;
-       }
-  
-       #page-header {
-           background: none;
-           background: #FFCC00;
-           max-height: 5px;
-           min-height: 5px;
-       }
-       h2 {
-           font-size: 1.45em;
-       }
-       h3 {
-           font-size: 1.3em;
-       }
-       h4 {
-           font-size: 1.15px;
-       }
-       .navbar-fixed-top {}
-       .skip-block-to,
-       .skip-block,
-       .page-context-header {
-           display: none;
-       }
-       .no-overflow {
-           min-width: 100%;
-           max-width: 100%;
-       }
-       .collapsibleregioncaption {
-           overflow: hidden;
-           text-overflow: ellipsis;
-       }
-   }
-
-
-   @media (max-width: 767px) {
-       #awesomebar.touchmode-active {
-           display: none;
-       }
-       #anchor {
-           position: absolute;
-           margin-top: -60px;
-       }
-   }
-
-
-   /*weird bullet size fix*/
-
-   .que.multichoice .answer div.r0 input,
-   .que.multichoice .answer div.r1 input,
-   input[type=radio] {
-       flex-shrink: 0;
-   }
-   /* hide clutter*/
-
-   .availabilityinfo.ishidden {
-       display: none;
-   }
-   /* line spacing */
-
-   .contents li {
-       line-height: 2;
-   }
-   /* ppro special styling */
-
-   .ppro{
-       padding: 50px 40px 50px 70px;
-       background: #000;
-       color: lime;
-       font-family: 'Andale Mono', AndaleMono, monospace;
-       margin-bottom: 20px;
-       box-shadow: inset 0 0 90px rgba(40, 252, 40, 0.63);
-       border-radius: 5px;
-   }
-
-.ppro p{
-       font-family: 'Andale Mono', AndaleMono, monospace;
-   }
-
-   .ppro pre {
-       padding: 5px 5px 5px 40px;
-       background: #000;
-       color: lime;
-       font-family: 'Andale Mono', AndaleMono, monospace;
-       border: none;
-   font-style: italic;
-   }
-
-   .ppro ul,
-   .ppro ol {
-       list-style-type: decimal-leading-zero;
-       font-family: 'Andale Mono', AndaleMono, monospace;
-   }
-
-   @keyframes colorchange {
-       0% {
-           color: lime background: #000;
-       }
-       100% {
-           color: #000;
-           background: lime;
-           _color: #a2ffa2;
-       }
-   }
-
-   .ppro li:hover {
-       background: lime;
-       color: #000;
-       animation: colorchange alternate infinite;
-       -webkit-animation: colorchange alternate infinite;
-       -moz-animation: colorchange alternate infinite;
-       -o-animation: colorchange alternate infinite;
-       animation-duration: 0.5s;
-       animation-delay: 10s;
-       animation-iteration-count: infinite;
-       animation-direction: alternate;
-   }
-
-   .course-362 #id_answer { /* this the coursenumber for ppro 1718 */
-       background: #000;
-       color: lime;
-       width: 99%;
-       min-height: 150px;
-       list-style-type: decimal-leading-zero;
-       font-family: 'Andale Mono', AndaleMono, monospace;
-   }
-@media (max-width: 630px){
-h4 {
- font-size: 16px
-}
-}
-
-/* vaktabel van Sanne  */
-
-/* ### vaktabel ### */
-.vak-tabel {
-  text-align:left;
-  width:100%;
-}
-
-.vak-tabel caption {
-  @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800);
-       font-family: 'Open Sans', sans-serif;
-  font-weight:300;
-}
-
-.vak-tabel th,
-.vak-tabel td {
-  padding: .2em .4em;
-  vertical-align:top;
-  font-size:.8em;
-  color:#333;
-  background:#FEE219;
-  border:solid 1px #333;
-}
-
-.vak-tabel th {
-  font-size:.85em;
-  line-height:1.3rem;
-}
-
-.vak-tabel td:first-of-type {
-  white-space: pre-line;
-}
-
-.course-content ul.topics li.section .vak-tabel ul:not(.section) {
-  margin:0;
-}
-
-.course-content ul.topics li.section .vak-tabel li {
-  line-height:1rem;
-  padding:2px 0;
-  list-style:none;
-}
-
-@media (min-width: 480px) {
-  .vak-tabel th {
-         padding: .2em .6em;
-  } 
-
-  .vak-tabel td {
-         padding: .4em .6em;
-  } 
-
-  .course-content ul.topics li.section .vak-tabel ul:not(.section) {
-     margin:0 0 0 18px;
-  }
-
-  .course-content ul.topics li.section .vak-tabel li {
-     list-style:square;
-  }
-}
-
-@media (min-width: 640px) {
-  .vak-tabel th,
-  .vak-tabel td {
-     font-size:1em;
-  }
-
-}
-
-@media (min-width: 976px) {
-.vak-tabel td:first-of-type {
-     white-space: nowrap;
-  }
-}
-
-hr{
-opacity: 0.2;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
 }
