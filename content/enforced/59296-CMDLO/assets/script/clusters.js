@@ -1,6 +1,6 @@
 // Clusters refactoren naar generiek tab script
 //de normale clusters omzetten naar tabbed clusters
-function iniClusters() {
+function initClusters() {
   var deClusters = document.querySelectorAll('.cluster');
   var nieuweRadio;
   var nieuwLabel;
@@ -64,5 +64,5 @@ function handleButtonClick(event) {
 
 //na laden van document clusters initiatie starten
 document.addEventListener('DOMContentLoaded', function() {
-  iniClusters();
+  initClusters();
 });

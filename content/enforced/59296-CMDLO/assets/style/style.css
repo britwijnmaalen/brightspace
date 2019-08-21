@@ -270,6 +270,8 @@
 table {
   border-collapse: collapse;
   margin-bottom: 1em;
+  width: 100%;
+  margin-top: 1em;
 }
 table a {
   text-decoration: none;
@@ -278,13 +280,8 @@ table a:hover {
   text-decoration: underline;
 }
 
-table.jaarcurnav {
-  width: 100%;
-  margin-top: 10px;
-}
-
-table.jaarcurnav th,
-table.jaarcurnav td {
+table th,
+table td {
   padding: 0.2em 0.4em;
   border: 1px #fff solid;
   background: #8e8e8e;
@@ -292,36 +289,31 @@ table.jaarcurnav td {
   font-size: 0.8em;
 }
 
-table.jaarcurnav td {
+table td {
   padding: 0;
 }
 
-table.jaarcurnav td {
+table td {
   background: #eee;
 }
 
-table.jaarcurnav td.keuzevak {
+table td.keuzevak {
   background: #999;
 }
 
-table.jaarcurnav thead th {
+table thead th {
   width: 23%;
 }
 
-table.jaarcurnav thead th:first-child {
+table thead th:first-child {
   width: auto;
 }
 
-table.jaarplannav tbody tr td {
-  padding: 1.3em 0.65em;
+table tbody tr a {
   line-height: 1.3em;
 }
 
-table.jaarcurnav tbody tr a {
-  line-height: 1.3em;
-}
-
-table.jaarcurnav tbody tr:not(:last-of-type) a {
+table tbody tr:not(:last-of-type) a {
   min-height: 5em;
   padding: 0 0.65em;
   display: flex;
@@ -329,11 +321,11 @@ table.jaarcurnav tbody tr:not(:last-of-type) a {
   justify-content: center;
 }
 
-table.jaarcurnav tbody tr a[title='SLC'] {
+table tbody tr a[title='SLC'] {
   min-height: 3.5em;
 }
 
-table.jaarcurnav span {
+table span {
   display: block;
   clear: both;
   font-size: 0.9em;
@@ -341,29 +333,29 @@ table.jaarcurnav span {
   opacity: 0.6;
 }
 
-table.jaarcurnav.cyaan th {
+table.cyaan th {
   background: rgba(25, 245, 245, 1);
 }
 
-table.jaarcurnav.magenta th {
+table.magenta th {
   background: rgba(245, 25, 245, 1);
   color: white;
 }
 
-table.jaarcurnav.yellow th {
+table.yellow th {
   background: #fee219;
 }
 
-table.jaarcurnav.key th {
+table.key th {
   background: rgb(51, 51, 51);
   color: white;
 }
 
-table.jaarcurnav td.profilering {
+table td.profilering {
   background: #e1e1e1;
 }
 
-table.jaarcurnav td.blank {
+table td.blank {
   background: transparent;
 }
 
