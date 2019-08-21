@@ -4,7 +4,7 @@
   body {
     font-family: Lato, 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
     color: #333;
-    background-color: #f9f9f9;
+    background-color: #fefefe;
     display: flex;
     flex-direction: column;
     margin: 1rem;
@@ -322,7 +322,7 @@ table tbody tr a {
   line-height: 1.3em;
 }
 
-table tbody tr:not(:last-of-type) a {
+table tbody tr a {
   min-height: 5em;
   padding: 0 0.65em;
   display: flex;
