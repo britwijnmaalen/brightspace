@@ -167,14 +167,20 @@
   body main > nav {
     background-color: #eee;
   }
-  main section > a {
+  main > nav a:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  main section > a,
+  main article > a {
     display: block;
     margin: 2em 0 3em;
     padding-left: 1.5em;
     position: relative;
     line-height: 2;
   }
-  main section > a:before {
+  main section > a:before,
+  main article > a:before {
     content: '☝️';
     position: absolute;
     top: center;
