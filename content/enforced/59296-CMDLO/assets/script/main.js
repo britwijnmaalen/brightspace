@@ -32,7 +32,7 @@
         ? feeds.local
         : feeds.fdmci;
 
-    fetch(url)
+    fetch(feeds.proxy + url)
       .then(response => response.text())
       .then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
       .then(xml => {
