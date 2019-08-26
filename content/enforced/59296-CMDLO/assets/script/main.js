@@ -30,9 +30,9 @@
       window.location.hostname === 'cmda.github.io' ||
       window.location.hostname === 'localhost'
         ? feeds.local
-        : feeds.fdmci;
+        : feeds.cmdlo;
 
-    fetch(feeds.proxy + url)
+    fetch(url)
       .then(response => response.text())
       .then(str => new window.DOMParser().parseFromString(str, 'text/xml'))
       .then(xml => {
@@ -47,11 +47,9 @@
             <h1>${item.title}</h1>
             <time>${convertDate(item.pubDate)}</time>
 
-            <a href="#" rel="author">${item.author}</a>
-
           </header>
 
-          <p>${item.description}</p>
+          <p>${stripHTML(item.description)}</p>
 
         </article>
       `
@@ -60,6 +58,14 @@
 
         newsContainer.insertAdjacentHTML('afterend', newsItems);
       });
+  }
+  /**
+   * This function strips HTML elements from string
+   * @param str: string to strip
+   */
+  function stripHTML(str) {
+    const doc = new DOMParser().parseFromString(str, 'text/html');
+    return doc.body.textContent || '';
   }
 
   /**
