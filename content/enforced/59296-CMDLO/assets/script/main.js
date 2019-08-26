@@ -30,7 +30,7 @@
       window.location.hostname === 'cmda.github.io' ||
       window.location.hostname === 'localhost'
         ? feeds.local
-        : feeds.cmdlo;
+        : feeds.fdmci;
 
     fetch(url)
       .then(response => response.text())
