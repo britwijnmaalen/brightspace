@@ -62,3 +62,6 @@ typings/
 
 # content of files folder
 content/enforced/59296-CMDLO/files/*
+
+# don't share AVG stuff
+content/enforced/59296-CMDLO/informatie/docenten.html
