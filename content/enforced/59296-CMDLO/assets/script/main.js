@@ -38,7 +38,7 @@
       .then(xml => {
         const data = xml2json(xml);
         const items = data.rss.channel.item;
-        let news = null;
+        let news = '';
 
         if (typeof items === 'object') {
           news = template(items);
