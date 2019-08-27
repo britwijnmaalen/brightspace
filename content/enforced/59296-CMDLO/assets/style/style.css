@@ -342,6 +342,9 @@ table td {
   background: #eee;
   padding: 0;
 }
+table.compact td {
+  line-height: 3;
+}
 
 table td.keuzevak {
   background: #999;
