@@ -168,6 +168,9 @@
   body main > nav {
     background-color: #eee;
   }
+  main > nav ul {
+    margin-bottom: 0;
+  }
   main > nav a:hover {
     background-color: #333;
     color: #fff;
