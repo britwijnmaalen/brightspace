@@ -368,7 +368,7 @@ table tbody tr a {
   justify-content: center;
 }
 table.compact tbody tr a {
-  min-height: 3em;
+  min-height: 2.5em;
 }
 
 table tbody tr a[title='SLC'] {
