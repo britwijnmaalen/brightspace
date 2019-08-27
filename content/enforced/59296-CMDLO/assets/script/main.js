@@ -1,11 +1,11 @@
 /*
-* TODO: Strive for monads only (https://curiosity-driven.org/monads-in-javascript)
-*
-* Not at all based on:
-*   - https://dev.to/shoupn/javascript-fetch-api-and-using-asyncawait-47mp
-*   - https://dev.to/niinpatel/converting-xml-to-json-using-recursion-2k4j
-*   -
-*/
+ * TODO: Strive for monads only (https://curiosity-driven.org/monads-in-javascript)
+ *
+ * Not at all based on:
+ *   - https://dev.to/shoupn/javascript-fetch-api-and-using-asyncawait-47mp
+ *   - https://dev.to/niinpatel/converting-xml-to-json-using-recursion-2k4j
+ *   -
+ */
 (() => {
   // define constants
   const feeds = {
@@ -38,26 +38,39 @@
       .then(xml => {
         const data = xml2json(xml);
         const items = data.rss.channel.item;
+        let news = null;
 
-        const newsItems = items
-          .map(
-            item => `
-        <article>
-          <header>
-            <h1>${item.title}</h1>
-            <time>${convertDate(item.pubDate)}</time>
+        if (typeof items === 'object') {
+          news = template(items);
+        } else {
+          news = items
+            .map(item => {
+              template(item);
+            })
+            .join('');
+        }
 
-          </header>
-
-          <p>${stripHTML(item.description)}</p>
-
-        </article>
-      `
-          )
-          .join('');
-
-        newsContainer.insertAdjacentHTML('afterend', newsItems);
+        newsContainer.insertAdjacentHTML('afterend', news);
       });
+  }
+
+  /**
+   * This function returns a rendered item
+   * @param item: item to render
+   */
+  function template(item) {
+    return `
+      <article>
+        <header>
+          <h1>${item.title}</h1>
+          <time>${convertDate(item.pubDate)}</time>
+
+        </header>
+
+        <p>${stripHTML(item.description)}</p>
+
+      </article>
+    `;
   }
   /**
    * This function strips HTML elements from string
