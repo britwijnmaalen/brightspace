@@ -271,6 +271,11 @@
   nav ul li {
     border: none;
   }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
   nav button {
     display: block;
