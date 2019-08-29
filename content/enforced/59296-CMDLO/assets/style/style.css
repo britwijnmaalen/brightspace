@@ -239,7 +239,124 @@
     text-decoration: none;
     background: transparent;
   }
-  
+
+  /* ### Vakoverzicht  tabel ### */
+  table {
+    border-collapse: collapse;
+    margin-bottom: 1em;
+    width: 100%;
+    margin-top: 1em;
+  }
+  table a {
+    text-decoration: none;
+  }
+
+  table th,
+  table td {
+    padding: 0.2em 0.4em;
+    border: 1px #fff solid;
+    background: #ccc;
+    text-align: center;
+    font-size: 0.8em;
+  }
+
+  table th {
+    white-space: nowrap;
+  }
+  table th:first-of-type {
+    display: none;
+  }
+  table th ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  table td {
+    background: #eee;
+    padding: 0;
+  }
+  table.compact td {
+    line-height: 3;
+  }
+
+  table td.keuzevak {
+    background: #999;
+  }
+
+  table thead th {
+    width: 23%;
+    line-height: 3;
+  }
+
+  table thead th:first-child {
+    width: auto;
+  }
+
+  table tbody tr a {
+    line-height: 1.3em;
+  }
+
+  table tbody tr a {
+    min-height: 5em;
+    padding: 0 0.65em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  table.compact tbody tr a {
+    min-height: 2.5em;
+  }
+
+  table tbody tr a[title='SLC'] {
+    min-height: 3.5em;
+  }
+
+  table span {
+    display: block;
+    clear: both;
+    font-size: 0.9em;
+    padding-top: 0.1em;
+    opacity: 0.6;
+  }
+
+  table.cyaan th,
+  table.cyaan a:hover {
+    background: rgba(25, 255, 255, 1);
+  }
+  table.cyaan td {
+    background: rgba(229, 255, 255, 1);
+  }
+
+  table.magenta th,
+  table.magenta a:hover {
+    background: rgba(255, 25, 255, 1);
+    color: white;
+  }
+  table.magenta td {
+    background: rgba(255, 229, 255, 1);
+  }
+
+  table.yellow th,
+  table.yellow a:hover {
+    background: rgba(255, 229, 25, 1);
+  }
+  table.yellow td {
+    background: rgba(255, 255, 225, 1);
+  }
+
+  table.key th,
+  table.key a:hover {
+    background: rgb(51, 51, 51);
+    color: white;
+  }
+
+  table td.profilering {
+    background: #e1e1e1;
+  }
+
+  table td.blank {
+    background: transparent;
+  }
 }
 
 /******** >=TABLET ********/
@@ -328,123 +445,13 @@
     grid-column: 2 / 5;
     grid-row: 3 / 3;
   }
+
+  /**** CURRICULUM TABLE ****/
+  table th:first-of-type {
+    display: table-cell;
+  }
 }
 
-/**** Copy Moodle ****/
-/* ### Vakoverzicht  tabel ### */
-table {
-  border-collapse: collapse;
-  margin-bottom: 1em;
-  width: 100%;
-  margin-top: 1em;
-}
-table a {
-  text-decoration: none;
-}
-
-table th,
-table td {
-  padding: 0.2em 0.4em;
-  border: 1px #fff solid;
-  background: #ccc;
-  text-align: center;
-  font-size: 0.8em;
-}
-
-table th {
-  white-space: nowrap;
-}
-table th ul {
-  list-style: none;
-  padding: 0;
-}
-
-table td {
-  background: #eee;
-  padding: 0;
-}
-table.compact td {
-  line-height: 3;
-}
-
-table td.keuzevak {
-  background: #999;
-}
-
-table thead th {
-  width: 23%;
-  line-height: 3;
-}
-
-table thead th:first-child {
-  width: auto;
-}
-
-table tbody tr a {
-  line-height: 1.3em;
-}
-
-table tbody tr a {
-  min-height: 5em;
-  padding: 0 0.65em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-table.compact tbody tr a {
-  min-height: 2.5em;
-}
-
-table tbody tr a[title='SLC'] {
-  min-height: 3.5em;
-}
-
-table span {
-  display: block;
-  clear: both;
-  font-size: 0.9em;
-  padding-top: 0.1em;
-  opacity: 0.6;
-}
-
-table.cyaan th,
-table.cyaan a:hover {
-  background: rgba(25, 255, 255, 1);
-}
-table.cyaan td {
-  background: rgba(229, 255, 255, 1);
-}
-
-table.magenta th,
-table.magenta a:hover {
-  background: rgba(255, 25, 255, 1);
-  color: white;
-}
-table.magenta td {
-  background: rgba(255, 229, 255, 1);
-}
-
-table.yellow th,
-table.yellow a:hover {
-  background: rgba(255, 229, 25, 1);
-}
-table.yellow td {
-  background: rgba(255, 255, 225, 1);
-}
-
-table.key th,
-table.key a:hover {
-  background: rgb(51, 51, 51);
-  color: white;
-}
-
-table td.profilering {
-  background: #e1e1e1;
-}
-
-table td.blank {
-  background: transparent;
-}
 
 /* ## propedeuse in en uitklap ## */
 * ~ input[name='cluster']:first-of-type + label {
