@@ -63,7 +63,7 @@
       <article>
         <header>
           <h1>${item.title}</h1>
-          <time>${item.pubDate}</time>
+          <time>${convertDate(item.pubDate)}</time>
 
         </header>
 

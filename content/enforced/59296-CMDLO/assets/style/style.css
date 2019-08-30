@@ -33,6 +33,8 @@
   time:after {
     content: '|';
     padding: 0 0.25em;
+
+    display: none;
   }
   img {
     max-width: 100%;
@@ -298,6 +300,11 @@
   input[name='cluster'] + label h2 span {
     display: none;
   }
+}
+
+/* helper classes */
+.scrollable {
+  overflow-x: auto;
 }
 
 /******** >=TABLET ********/
