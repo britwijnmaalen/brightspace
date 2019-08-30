@@ -40,12 +40,12 @@
         const items = data.rss.channel.item;
         let news = '';
 
-        if (typeof items === 'object') {
+        if (!items.length) {
           news = template(items);
         } else {
           news = items
             .map(item => {
-              template(item);
+              return template(item);
             })
             .join('');
         }
