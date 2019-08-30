@@ -17,7 +17,7 @@
 
   // scroll past inline submenu on contentpages
   if (document.body.contains(document.querySelector('main header > nav'))) {
-    scrollToContent();
+    setTimeout(scrollToContent, 1000);
   }
   // create another script that we only include in index?
   if (document.body.contains(document.getElementById('news'))) {
@@ -137,7 +137,6 @@
    */
   function scrollToContent() {
     const target = document.querySelector('main header + *');
-
     target.scrollIntoView({ behavior: 'smooth' });
   }
 })(); // the dogs balls
