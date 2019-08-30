@@ -7,8 +7,10 @@
     background-color: #fefefe;
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+    margin: 1rem 2vw;
     font-weight: 300;
+    font-size: calc(1em + 6 * ((100vw - 320px) / 680));
+    /max-width: 40em;
   }
   h1 {
     font-weight: 300;
@@ -308,14 +310,14 @@
 }
 
 /******** >=TABLET ********/
-@media (min-width: 45em) {
+@media (min-width: 75em) {
   body {
-    max-width: 73rem;
     margin: 1rem auto;
     display: grid;
     grid-template-columns: 15em 6fr;
     grid-template-rows: auto 5em;
     overflow-x: hidden;
+    width: 58em;
     font-size: 1.25em;
   }
 
@@ -336,7 +338,7 @@
     background-color: transparent;
     grid-column: 1 / 2;
     grid-row: 1 / 3;
-    margin: 1.75rem 0 0;
+    margin: 1.5rem 0 0;
     transition: 0.25s;
   }
   body > nav {
