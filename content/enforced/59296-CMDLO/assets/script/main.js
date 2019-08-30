@@ -6,9 +6,7 @@
  *   - https://dev.to/niinpatel/converting-xml-to-json-using-recursion-2k4j
  *   -
  */
-console.log(1);
 (() => {
-  console.log(1);
   // define constants
   const feeds = {
     cmdlo: 'https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296',
