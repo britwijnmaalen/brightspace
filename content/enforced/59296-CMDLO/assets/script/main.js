@@ -15,9 +15,10 @@
     local: './assets/script/rss.xml'
   };
 
-  // disable menu toggle for now, improve later
-  //toggleNav()
-
+  // scroll past inline submenu on contentpages
+  if (document.body.contains(document.querySelector('main header > nav'))) {
+    setTimeout(scrollToContent, 1000);
+  }
   // create another script that we only include in index?
   if (document.body.contains(document.getElementById('news'))) {
     getNews();
@@ -127,5 +128,15 @@
    */
   function append(element, parent) {
     document.querySelector(parent).appendChild(element);
+  }
+
+  /**
+   * Skips the submenu
+   * @param element: the element to append
+   * @param parent : the parent to append to
+   */
+  function scrollToContent() {
+    const target = document.querySelector('main header + *');
+    target.scrollIntoView({ behavior: 'smooth' });
   }
 })(); // the dogs balls
