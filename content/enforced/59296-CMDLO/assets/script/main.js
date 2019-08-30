@@ -48,6 +48,7 @@
             .map(item => {
               return template(item);
             })
+            .reverse()
             .join('');
         }
 
