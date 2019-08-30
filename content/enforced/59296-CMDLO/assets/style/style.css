@@ -18,7 +18,6 @@
   h5 {
     font-size: 1em;
   }
-
   a {
     color: #333;
   }
@@ -27,7 +26,6 @@
   a.active {
     background-color: #eee;
   }
-
   address {
     margin-bottom: 1em;
     font-style: normal;
@@ -36,85 +34,41 @@
     content: '|';
     padding: 0 0.25em;
   }
-
   img {
     max-width: 100%;
     margin-bottom: 0.5em;
   }
-
   th {
     text-align: left;
   }
 
   /**** HEADER ****/
   body > header {
-    order: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-  }
-
-  body > header:after {
-    content: '';
-    background-image: url('../image/icons/cmd_icon_robot.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 3em;
-    height: 3em;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: rotate(10deg);
-  }
-
-  body > header h1 {
-    margin: 0;
-  }
-
-  header h1 em {
-    font-style: normal;
-    background-color: #000;
-    color: #fff;
-    margin-right: 0.1em;
-    padding: 0 0.3em;
-  }
-
-  header p {
-    margin: 0;
-    font-size: 1.25em;
-  }
-
-  body > header {
     display: none;
   }
 
-  /**** MENU NAVIGATION ****/
+  /**** MAIN NAVIGATION ****/
   nav {
     padding: 1rem;
     order: 3;
     background-color: #fff;
     margin: 0 -1rem;
   }
-
   nav h1 {
     margin: 0;
     font-weight: 300;
     line-height: 1.25em;
     font-size: 1.5em;
   }
-
   nav ul {
     padding: 0;
     margin: 0 0 1.25em 0;
     list-style-type: none;
     border-top: 1px solid #f0f0f0;
   }
-
   nav ul:first-of-type {
     border: none;
   }
-
   nav ul li {
     padding: 0;
     line-height: 1.25em;
@@ -122,7 +76,6 @@
     display: flex;
     position: relative;
   }
-
   nav ul li:before {
     content: '\203A\00a0';
     position: absolute;
@@ -131,7 +84,6 @@
     display: block;
     height: 1em;
   }
-
   nav ul li a {
     color: #333;
     padding: 0.5em 0.5em 0.5em 1em;
@@ -139,14 +91,23 @@
     width: 100%;
     text-decoration: none;
   }
-
   nav button {
     display: none;
   }
 
-  /**** IN PAGE NAV ****/
+  /**** IN PAGE NAV (only in MAIN, not in MAIN > HEADER ****/
   main > nav {
     display: block;
+  }
+  main > nav {
+    background-color: #eee;
+  }
+  main > nav ul {
+    margin-bottom: 0;
+  }
+  main > nav a:hover {
+    background-color: #333;
+    color: #fff;
   }
 
   /**** MAIN ****/
@@ -156,23 +117,42 @@
     grid-row: 2 / 3;
     order: 2;
   }
+  main h2 {
+    font-size: 1.5em;
+    margin: 1.5em 0 0.25em;
+    font-weight: 300;
+  }
+
+  main h3 {
+    font-size: 1.25em;
+  }
+  main p,
+  main li {
+    margin-top: 0;
+    line-height: 1.75;
+  }
+
   main header {
     margin-bottom: 1em;
   }
   main header > nav {
     padding: 0 1rem;
   }
+
   main section h1 {
     font-weight: bold;
   }
-  body main > nav {
-    background-color: #eee;
+  main article {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  main article header h1 {
+    font-size: 1.25em;
+  }
+  main article header h1 ~ * {
+    font-size: 0.9em;
   }
 
-  main > nav a:hover {
-    background-color: #333;
-    color: #fff;
-  }
   main section > a,
   main article > a {
     display: block;
@@ -187,34 +167,6 @@
     position: absolute;
     top: center;
     left: 0;
-  }
-  main h2 {
-    font-size: 1.5em;
-    margin: 1.5em 0 0.25em;
-    font-weight: 300;
-  }
-
-  main h3 {
-    font-size: 1.25em;
-  }
-
-  main p,
-  main li {
-    margin-top: 0;
-    line-height: 1.75;
-  }
-
-  main article {
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #f0f0f0;
-  }
-
-  main article header h1 {
-    font-size: 1.25em;
-  }
-
-  main article header h1 ~ * {
-    font-size: 0.9em;
   }
 
   /**** FOOTER ****/
@@ -233,7 +185,7 @@
   }
   footer a,
   footer a:hover {
-    font-size: .8em;
+    font-size: 0.8em;
     text-decoration: none;
     background: transparent;
   }
@@ -245,56 +197,53 @@
     width: 100%;
     margin-top: 1em;
   }
-  table a {
-    text-decoration: none;
-  }
-
   table th,
   table td {
-    padding: 0.2em 0.4em;
     border: 1px #fff solid;
-    background: #ccc;
     text-align: center;
     font-size: 0.8em;
   }
-
   table th {
+    padding: 0.2em 0.4em;
     white-space: nowrap;
+    background: #ccc;
   }
+  table td {
+    padding: 0;
+    background: #eee;
+  }
+  /* Hide the first column in single column layout */
   table th:first-of-type {
     display: none;
+  }
+  table td.keuzevak {
+    background: #999;
+  }
+  table td.profilering {
+    background: #e1e1e1;
+  }
+  table td.blank {
+    background: transparent;
+  }
+  table.compact td {
+    line-height: 3;
+  }
+  table thead th {
+    width: 23%;
+    line-height: 3;
+  }
+  table thead th:first-child {
+    width: auto;
   }
   table th ul {
     list-style: none;
     padding: 0;
   }
-
-  table td {
-    background: #eee;
-    padding: 0;
+  table a {
+    text-decoration: none;
   }
-  table.compact td {
-    line-height: 3;
-  }
-
-  table td.keuzevak {
-    background: #999;
-  }
-
-  table thead th {
-    width: 23%;
-    line-height: 3;
-  }
-
-  table thead th:first-child {
-    width: auto;
-  }
-
   table tbody tr a {
     line-height: 1.3em;
-  }
-
-  table tbody tr a {
     min-height: 5em;
     padding: 0 0.65em;
     display: flex;
@@ -304,11 +253,9 @@
   table.compact tbody tr a {
     min-height: 2.5em;
   }
-
   table tbody tr a[title='SLC'] {
     min-height: 3.5em;
   }
-
   table span {
     display: block;
     clear: both;
@@ -316,7 +263,7 @@
     padding-top: 0.1em;
     opacity: 0.6;
   }
-
+  /* Cyaan */
   table.cyaan th,
   table.cyaan a:hover {
     background: rgba(25, 255, 255, 1);
@@ -324,7 +271,7 @@
   table.cyaan td {
     background: rgba(229, 255, 255, 1);
   }
-
+  /* Magenta */
   table.magenta th,
   table.magenta a:hover {
     background: rgba(255, 25, 255, 1);
@@ -333,7 +280,7 @@
   table.magenta td {
     background: rgba(255, 229, 255, 1);
   }
-
+  /* Yellow */
   table.yellow th,
   table.yellow a:hover {
     background: rgba(255, 229, 25, 1);
@@ -341,19 +288,15 @@
   table.yellow td {
     background: rgba(255, 255, 225, 1);
   }
-
+  /* Key */
   table.key th,
   table.key a:hover {
     background: rgb(51, 51, 51);
     color: white;
   }
 
-  table td.profilering {
-    background: #e1e1e1;
-  }
-
-  table td.blank {
-    background: transparent;
+  input[name='cluster'] + label h2 span {
+    display: none;
   }
 }
 
@@ -448,8 +391,10 @@
   table th:first-of-type {
     display: table-cell;
   }
+  input[name='cluster'] + label h2 span {
+    display: inline;
+  }
 }
-
 
 /* ## propedeuse in en uitklap ## */
 * ~ input[name='cluster']:first-of-type + label {
@@ -498,24 +443,20 @@ input[id='clusterCyaan']:hover + label h2,
 input[id='clusterCyaan']:checked + label h2 {
   background: rgba(25, 245, 245, 1);
 }
-
 input[id='clusterMagenta']:hover + label h2,
 input[id='clusterMagenta']:checked + label h2 {
   background: rgba(245, 25, 245, 1);
   color: white;
 }
-
 input[id='clusterYellow']:hover + label h2,
 input[id='clusterYellow']:checked + label h2 {
   background: #fee219;
 }
-
 input[id='clusterKey']:hover + label h2,
 input[id='clusterKey']:checked + label h2 {
   background: rgb(51, 51, 51);
   color: white;
 }
-
 input:focus + label h5 {
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
 }
