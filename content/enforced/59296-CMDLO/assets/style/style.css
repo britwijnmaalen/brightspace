@@ -310,7 +310,7 @@
 }
 
 /******** >=TABLET ********/
-@media (min-width: 75em) {
+@media (min-width: 77em) {
   body {
     margin: 1rem auto;
     display: grid;
@@ -343,6 +343,7 @@
   }
   body > nav {
     padding-left: 0;
+    margin-left: -0.3em; /* 😱, this is sketchy aligning our moodle page with the sandbox */
   }
 
   body.hide-menu nav {
