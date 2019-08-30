@@ -6,7 +6,9 @@
  *   - https://dev.to/niinpatel/converting-xml-to-json-using-recursion-2k4j
  *   -
  */
+console.log(1);
 (() => {
+  console.log(1);
   // define constants
   const feeds = {
     cmdlo: 'https://dlo.mijnhva.nl/d2l/le/news/rss/59296/course?ou=59296',
@@ -15,9 +17,10 @@
     local: './assets/script/rss.xml'
   };
 
-  // disable menu toggle for now, improve later
-  //toggleNav()
-
+  // scroll past inline submenu on contentpages
+  if (document.body.contains(document.querySelector('main header > nav'))) {
+    scrollToContent();
+  }
   // create another script that we only include in index?
   if (document.body.contains(document.getElementById('news'))) {
     getNews();
@@ -127,5 +130,16 @@
    */
   function append(element, parent) {
     document.querySelector(parent).appendChild(element);
+  }
+
+  /**
+   * Skips the submenu
+   * @param element: the element to append
+   * @param parent : the parent to append to
+   */
+  function scrollToContent() {
+    const target = document.querySelector('main header + *');
+
+    target.scrollIntoView({ behavior: 'smooth' });
   }
 })(); // the dogs balls
