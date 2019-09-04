@@ -233,9 +233,6 @@
     background: #eee;
   }
   /* Hide the first column in single column layout */
-  table th:first-of-type {
-    display: none;
-  }
   table td.keuzevak {
     background: #999;
   }

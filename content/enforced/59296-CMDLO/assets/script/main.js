@@ -110,12 +110,14 @@
     }
 
     // scroll to inline page navigation
-    const toInlineNav = $('main article > a');
-    if (document.body.contains(toInlineNav)) {
+    const toInlineNav = $$('main article > a');
+    if (document.body.contains(toInlineNav[0])) {
       const inlineNav = $('main > nav');
-      toInlineNav.addEventListener('click', e => {
-        e.preventDefault();
-        setTimeout(scrollToContent(inlineNav), 100);
+      toInlineNav.forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          setTimeout(scrollToContent(inlineNav), 100);
+        });
       });
     }
     /**
