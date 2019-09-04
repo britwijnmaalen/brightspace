@@ -160,6 +160,8 @@
     line-height: 2em;
     height: 2em;
     border-bottom: 1px solid #666;
+    overflow-x: auto;
+    white-space: nowrap;
   }
   main article {
     margin-bottom: 1rem;
