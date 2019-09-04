@@ -175,6 +175,6 @@
     return document.querySelector(el);
   }
   function $$(els) {
-    return document.querySelector(el);
+    return document.querySelectorAll(els);
   }
 })(); // the dogs balls
