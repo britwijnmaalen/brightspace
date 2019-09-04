@@ -57,6 +57,8 @@
     background-color: #fff;
     margin: 0 -1rem;
     position: relative;
+  }
+  body > nav {
     z-index: 500;
   }
   nav h1 {
@@ -109,15 +111,8 @@
   main > nav {
     display: block;
   }
-  main > nav {
-    background-color: #eee;
-  }
   main > nav ul {
     margin-bottom: 0;
-  }
-  main > nav a:hover {
-    background-color: #333;
-    color: #fff;
   }
 
   /**** MAIN ****/
@@ -341,7 +336,7 @@ a.to-navigation {
   position: fixed;
   top: 1em;
   right: 1em;
-  z-index: 200;
+  z-index: 450;
   font-size: 0.8em;
   border: 2px solid #666;
 }
