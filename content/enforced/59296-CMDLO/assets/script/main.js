@@ -98,7 +98,7 @@
       const nav = $('body > nav');
       showNav.addEventListener('click', e => {
         e.preventDefault();
-        setTimeout(scrollToContent(nav), 0);
+        setTimeout(scrollToContent(nav), 100);
       });
     }
 
@@ -150,7 +150,7 @@
     }
 
     /**
-     * Skips
+     * Scroll to content
      * @param target: the element to scroll to
      */
     function scrollToContent(target) {
