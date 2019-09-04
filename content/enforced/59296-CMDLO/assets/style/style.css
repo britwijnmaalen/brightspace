@@ -110,6 +110,7 @@
   /**** IN PAGE NAV (only in MAIN, not in MAIN > HEADER ****/
   main > nav {
     display: block;
+    background-color: #f0f0f0;
   }
   main > nav ul {
     margin-bottom: 0;
@@ -122,8 +123,11 @@
   }
   main h2 {
     font-size: 1.5em;
-    margin: 0 0 0.25em;
+    margin: 0 -1rem;
     font-weight: 300;
+    padding: 0 1rem;
+    height: 2.25em;
+    line-height: 2.25em;
   }
 
   main h3 {
@@ -152,12 +156,13 @@
     z-index: 100;
   }
   main h3 {
-    top: 1.4em;
+    top: 2em;
+    line-height: 2em;
+    height: 2em;
+    border-bottom: 2px solid #666;
   }
   main article {
     margin-bottom: 1rem;
-    border-bottom: 1px solid #f0f0f0;
-    overflow: hidden;
   }
   main article header h1 {
     font-size: 1.25em;
