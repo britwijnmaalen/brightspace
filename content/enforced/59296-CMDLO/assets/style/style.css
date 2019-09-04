@@ -332,17 +332,23 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.to-navigation {
+a.to-navigation {
   color: #333;
   text-decoration: none;
-  background-color: #f0f0f0;
-  padding: 0.5em;
-  border-radius: 0.5em;
+  background-color: #fff;
+  padding: 0.25em 0.5em 0.25em 0.25em;
+  border-radius: 0.55em;
   position: fixed;
   top: 1em;
   right: 1em;
   z-index: 200;
   font-size: 0.8em;
+  border: 2px solid #666;
+}
+a.to-navigation:hover {
+  background-color: #fff;
+  border-color: #006fbf;
+  color: #006fbf;
 }
 
 /******** >=TABLET ********/
