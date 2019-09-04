@@ -15,12 +15,12 @@
     local: './assets/script/rss.xml'
   };
 
-  // scroll past inline submenu on contentpages
-  if (document.body.contains(document.querySelector('main header > nav'))) {
-    setTimeout(scrollToContent, 1000);
-  }
+  // init UI functions
+  enhanceUI();
+
+  // fetch, parse en render rss news feed
   // create another script that we only include in index?
-  if (document.body.contains(document.getElementById('news'))) {
+  if (document.body.contains($('#news'))) {
     getNews();
   }
 
@@ -91,53 +91,81 @@
     return new Intl.DateTimeFormat().format(new Date(date));
   }
 
-  /**
-   * This function creates a button to toggle the navigation using a CSS
-   * class juggling event listener toggling the 'hide-menu' class.
-   *
-   * DOES TOO MUCH, REFACTOR!
-   */
-  function toggleNav() {
-    let toggleBtn = createElement('button');
-    setInnerHTML(toggleBtn, 'toggle menu');
-    toggleBtn.addEventListener('click', e =>
-      document.body.classList.toggle('hide-menu')
-    );
-    append(toggleBtn, 'nav');
-  }
+  function enhanceUI() {
+    // jump to site navigation
+    const showNav = $('a.to-navigation');
+    if (document.body.contains(showNav)) {
+      const nav = $('body > nav');
+      showNav.addEventListener('click', e => {
+        e.preventDefault();
+        setTimeout(scrollToContent(nav), 0);
+      });
+    }
 
-  /**
-   * This function changes the innerHTML for the passed element
-   * @param element: the element to change the inner HTML for
-   * @param innerHTML: the stuff that goes in to the inner HTML
-   */
-  function setInnerHTML(element, innerHTML) {
-    element.innerHTML = innerHTML;
-  }
+    // scroll past inline submenu on contentpages
+    const onPageNav = $('main header > nav');
+    if (document.body.contains(onPageNav)) {
+      const target = $('main header + *');
+      setTimeout(scrollToContent(target), 2000);
+    }
 
-  /**
-   * Creates an element and returns it
-   */
-  function createElement(element) {
-    return document.createElement(element);
-  }
+    /**
+     * This function creates a button to toggle the navigation using a CSS
+     * class juggling event listener toggling the 'hide-menu' class.
+     *
+     * DOES TOO MUCH, REFACTOR!
+     */
+    function toggleNav() {
+      let toggleBtn = createElement('button');
+      setInnerHTML(toggleBtn, 'toggle menu');
+      toggleBtn.addEventListener('click', e =>
+        document.body.classList.toggle('hide-menu')
+      );
+      append(toggleBtn, 'nav');
+    }
 
-  /**
-   * Appends a HTML element to a parent
-   * @param element: the element to append
-   * @param parent : the parent to append to
-   */
-  function append(element, parent) {
-    document.querySelector(parent).appendChild(element);
-  }
+    /**
+     * This function changes the innerHTML for the passed element
+     * @param element: the element to change the inner HTML for
+     * @param innerHTML: the stuff that goes in to the inner HTML
+     */
+    function setInnerHTML(element, innerHTML) {
+      element.innerHTML = innerHTML;
+    }
 
-  /**
-   * Skips the submenu
-   * @param element: the element to append
-   * @param parent : the parent to append to
-   */
-  function scrollToContent() {
-    const target = document.querySelector('main header + *');
-    target.scrollIntoView({ behavior: 'smooth' });
+    /**
+     * Creates an element and returns it
+     */
+    function createElement(element) {
+      return document.createElement(element);
+    }
+
+    /**
+     * Appends a HTML element to a parent
+     * @param element: the element to append
+     * @param parent : the parent to append to
+     */
+    function append(element, parent) {
+      $(parent).appendChild(element);
+    }
+
+    /**
+     * Skips
+     * @param target: the element to scroll to
+     */
+    function scrollToContent(target) {
+      return function() {
+        target.scrollIntoView({ behavior: 'smooth' });
+      };
+    }
+  }
+  // skip to site navigation
+
+  // helper functions
+  function $(el) {
+    return document.querySelector(el);
+  }
+  function $$(els) {
+    return document.querySelector(el);
   }
 })(); // the dogs balls

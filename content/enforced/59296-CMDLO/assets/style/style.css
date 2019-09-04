@@ -56,6 +56,8 @@
     order: 3;
     background-color: #fff;
     margin: 0 -1rem;
+    position: relative;
+    z-index: 500;
   }
   nav h1 {
     margin: 0;
@@ -333,6 +335,17 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.to-navigation {
+  color: #333;
+  text-decoration: none;
+  background-color: #f0f0f0;
+  padding: 0.25em;
+  border-radius: 0.25em;
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  z-index: 200;
+}
 
 /******** >=TABLET ********/
 @media (min-width: 77em) {
@@ -429,6 +442,16 @@
   }
   input[name='cluster'] + label h2 span {
     display: inline;
+  }
+  a.to-navigation {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
   }
 }
 
