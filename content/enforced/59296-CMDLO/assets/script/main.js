@@ -69,7 +69,7 @@
 
           </header>
 
-          <p>${stripHTML(item.description)}</p>
+          ${parseHTML(item.description)}
 
         </article>
       `;
@@ -78,7 +78,7 @@
      * This function strips HTML elements from string
      * @param str: string to strip
      */
-    function stripHTML(str) {
+    function parseHTML(str) {
       const doc = new DOMParser().parseFromString(str, 'text/html');
       return doc.body.textContent || '';
     }

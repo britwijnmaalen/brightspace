@@ -356,8 +356,9 @@ a.highlight {
 a.highlight:before {
   position: absolute;
   left: 0.5rem;
-  top: 25%;
+  top: calc(50% - 1.2rem/2);
   font-size: 1.25rem;
+  height: 1.2rem;
 }
 a.highlight:hover {
   background-color: #fff;
