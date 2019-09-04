@@ -114,7 +114,6 @@
     if (document.body.contains(toInlineNav)) {
       const inlineNav = $('main > nav');
       toInlineNav.addEventListener('click', e => {
-        console.log(1);
         e.preventDefault();
         setTimeout(scrollToContent(inlineNav), 100);
       });
