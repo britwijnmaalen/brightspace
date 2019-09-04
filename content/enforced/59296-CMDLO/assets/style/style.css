@@ -20,7 +20,7 @@
     font-size: 1em;
   }
   a {
-    color: #333;
+    color: #006fbf;
   }
   a:hover,
   a:focus,
@@ -259,6 +259,7 @@
   }
   table a {
     text-decoration: none;
+    color: #333;
   }
   table tbody tr a {
     line-height: 1.3em;
