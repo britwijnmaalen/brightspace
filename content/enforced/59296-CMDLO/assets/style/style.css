@@ -345,6 +345,7 @@
   top: 1em;
   right: 1em;
   z-index: 200;
+  font-size: 0.8em;
 }
 
 /******** >=TABLET ********/
@@ -443,6 +444,8 @@
   input[name='cluster'] + label h2 span {
     display: inline;
   }
+
+  /* helper classes */
   a.to-navigation {
     position: absolute;
     width: 1px;
