@@ -93,10 +93,10 @@
 
   function enhanceUI() {
     // jump to site navigation
-    const showNav = $('a.to-navigation');
-    if (document.body.contains(showNav)) {
+    const toNav = $('a.to-navigation');
+    if (document.body.contains(toNav)) {
       const nav = $('body > nav');
-      showNav.addEventListener('click', e => {
+      toNav.addEventListener('click', e => {
         e.preventDefault();
         setTimeout(scrollToContent(nav), 100);
       });
@@ -109,6 +109,16 @@
       setTimeout(scrollToContent(target), 2000);
     }
 
+    // scroll to inline page navigation
+    const toInlineNav = $('main article > a');
+    if (document.body.contains(toInlineNav)) {
+      const inlineNav = $('main > nav');
+      toInlineNav.addEventListener('click', e => {
+        console.log(1);
+        e.preventDefault();
+        setTimeout(scrollToContent(inlineNav), 100);
+      });
+    }
     /**
      * This function creates a button to toggle the navigation using a CSS
      * class juggling event listener toggling the 'hide-menu' class.

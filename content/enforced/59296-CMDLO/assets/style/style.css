@@ -151,10 +151,10 @@
   }
   main h2,
   main h3 {
-    position: sticky;
-    top: 0;
-    background-color: #fefefe;
-    z-index: 100;
+    /position: sticky;
+    /top: 0;
+    /background-color: #fefefe;
+    /z-index: 100;
   }
   main h3 {
     top: 1.4em;
