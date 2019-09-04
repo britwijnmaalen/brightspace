@@ -134,7 +134,7 @@
     function scrollToNav() {
       let scrollToLink = createElement('a');
       setInnerHTML(scrollToLink, '👇 navigatie');
-      scrollToLink.classList.add('to-navigation');
+      scrollToLink.classList.add('to-navigation', 'highlight');
       scrollToLink.addEventListener('click', e => {
         e.preventDefault();
         const nav = $('body > nav');

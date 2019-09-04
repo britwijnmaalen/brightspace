@@ -157,6 +157,7 @@
   main article {
     margin-bottom: 1rem;
     border-bottom: 1px solid #f0f0f0;
+    overflow: hidden;
   }
   main article header h1 {
     font-size: 1.25em;
@@ -173,17 +174,19 @@
   main section > a,
   main article > a {
     display: block;
-    margin: 2em 0 3em;
+    margin: 2em 0 1em;
     padding-left: 1.5em;
     position: relative;
     line-height: 2;
+    width: 20em;
+    text-align: center;
   }
   main section > a:before,
   main article > a:before {
     content: '☝️';
     position: absolute;
     top: center;
-    left: 0;
+    left: 0.5em;
   }
 
   /**** FOOTER ****/
@@ -328,19 +331,22 @@
   overflow: hidden;
 }
 a.to-navigation {
-  color: #333;
-  text-decoration: none;
-  background-color: #fff;
-  padding: 0.25em 0.5em 0.25em 0.25em;
-  border-radius: 0.55em;
   position: fixed;
   top: 1em;
   right: 1em;
   z-index: 450;
-  font-size: 0.8em;
-  border: 2px solid #666;
+  padding: 0.25em 0.5em 0.25em 0.25em;
 }
-a.to-navigation:hover {
+
+a.highlight {
+  color: #333;
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 0.55em;
+  border: 2px solid #666;
+  font-size: 0.8em;
+}
+a.highlight:hover {
   background-color: #fff;
   border-color: #006fbf;
   color: #006fbf;
