@@ -379,6 +379,7 @@
     grid-row: 1 / 2;
     margin: 1.5rem 0 0;
     transition: 0.25s;
+    z-index: 50;
   }
   body > nav {
     padding-left: 0;
