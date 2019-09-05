@@ -80,10 +80,12 @@
      */
     function parseHTML(str) {
       const doc = new DOMParser().parseFromString(str, 'text/html');
+      //const description = doc.body.textContent;
       const description = doc.body.textContent
-        .replace(/font-size/, '')
-        .replace(/color/, '')
-        .replace(/font-family/, '');
+        .replace(/font-size/g, '')
+        .replace(/color/g, '')
+        .replace(/font-family/g, '');
+      //const description = doc.body.textContent.replace(/font-size:(.*);/, '');
       return description || '';
     }
 
