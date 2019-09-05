@@ -52,7 +52,7 @@
               .join('');
           }
 
-          newsContainer.insertAdjacentHTML('afterend', news);
+          newsContainer.insertAdjacentHTML('beforeend', news);
         });
     }
 
@@ -139,7 +139,7 @@
      */
     function scrollToNav() {
       let scrollToLink = createElement('a');
-      setInnerHTML(scrollToLink, 'Navigatie');
+      setInnerHTML(scrollToLink, 'Menu');
       scrollToLink.classList.add('to-navigation', 'highlight');
       scrollToLink.addEventListener('click', e => {
         e.preventDefault();
