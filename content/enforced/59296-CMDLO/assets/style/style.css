@@ -359,9 +359,9 @@ a.highlight {
 }
 a.highlight:before {
   position: absolute;
-  left: 0.75rem;
-  top: calc(52% - 1.2rem/2);
-  font-size: 1rem;
+  left: 0.5rem;
+  top: calc(49% - 1.2rem/2);
+  font-size: 0.8rem;
   height: 1.2rem;
 }
 a.highlight:hover {
