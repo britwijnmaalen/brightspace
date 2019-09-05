@@ -336,7 +336,7 @@
 }
 header a.to-navigation {
   position: fixed;
-  top: 1em;
+  top: 1.25rem;
   right: 2vw;
   z-index: 450;
 }
