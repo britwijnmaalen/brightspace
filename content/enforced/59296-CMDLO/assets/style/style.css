@@ -129,6 +129,10 @@
     height: 2.25em;
     line-height: 2.25em;
   }
+  main section#news h2 {
+    font-size: 1.1em;
+    font-weight: bold;
+  }
 
   main h3 {
     font-size: 1.25em;
